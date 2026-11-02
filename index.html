@@ -141,7 +141,7 @@ input.txt{font:500 16px var(--f-ui)}
     <div>
       <p class="label">Oggi voglio esercitarmi su…</p>
       <input type="text" id="filter" placeholder="es. 顺利 决定 说" autocomplete="off">
-      <p class="hint">Scrivi le parole o i singoli caratteri che vuoi ripassare, separati da uno spazio (facoltativo). Una parola HSK si detta con significato e pinyin; un carattere singolo con il pinyin e una parola in cui manca, per esempio jué · □定.</p>
+      <p class="hint">Scrivi le parole o i singoli caratteri che vuoi ripassare, separati da uno spazio (facoltativo). Ogni parola o carattere HSK si detta con significato e pinyin (花 → fiore · huā). Un carattere che non si usa da solo appare in una parola in cui manca, per esempio □定 · decidere · jué.</p>
       <div class="chips zrow" id="more"></div>
       <div class="row zrow">
         <button class="btn ghost" id="zitie" disabled>Crea il 字帖 in PDF</button>
@@ -235,7 +235,7 @@ input.txt{font:500 16px var(--f-ui)}
   <footer>
     <p class="credit">A cura di <b>Ying Liu</b> · Università Ca' Foscari Venezia · <span class="mail">ying.liu@unive.it</span></p>
     Tratti: Hanzi Writer · Make Me a Hanzi (Arphic Public License) · Lessico HSK 3.0 (standard 2021), livelli 1–4
-    <p class="ver">versione 2026-11-02-4</p></footer>
+    <p class="ver">versione 2026-11-02-5</p></footer>
 </div>
 
 <script src="hanzi-writer.min.js"></script>
@@ -270,7 +270,9 @@ function charUnit(c){
   // prompts, in order of preference: the character as an HSK word on its own (他 → lui),
   // HSK words that contain it (其他), and only when neither exists, other common words (沟通)
   const solo=VOCAB.filter(v=>v.w===c).map(v=>[c,v.p,v.it]);
-  const hsk=(CTX.ctx[c]||[]).map(e=>[e[0],e[1],(VOCAB.find(v=>v.w===e[0])||{}).it||'']);
+  // HSK words containing the character, keeping only the lowest level (easiest) ones
+  let hsk=(CTX.ctx[c]||[]).map(e=>{ const v=VOCAB.find(x=>x.w===e[0])||{}; return [e[0],e[1],v.it||'',v.l||9]; });
+  if(hsk.length){ const lo=Math.min(...hsk.map(e=>e[3])); hsk=hsk.filter(e=>e[3]===lo); }
   const ext=(solo.length||hsk.length) ? [] : (CTX.ext[c]||[]).map(e=>[e[0],e[1],'']);
   const o=hsk.concat(ext);
   if(!solo.length && !o.length && !CTX.cpy[c]) return null;
@@ -439,7 +441,8 @@ function loadWord(){
   $('qbar').style.width=(qi/round.length*100)+'%';
   if(v.k==='char'){
     // the character on its own (when it is an HSK word) half of the time, otherwise a word with a gap
-    const useSolo = v.solo.length && (!v.opts.length || Math.random()<.5);
+    // a character that is an HSK word on its own is always asked on its own (花 → fiore · huā)
+    const useSolo = v.solo.length>0;
     const o = useSolo ? v.solo[Math.floor(Math.random()*v.solo.length)]
             : (v.opts.length ? v.opts[Math.floor(Math.random()*v.opts.length)] : null);
     v.p = o ? o[1] : CTX.cpy[v.w]; v.cx = o ? o[0] : '';
