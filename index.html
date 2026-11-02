@@ -118,6 +118,120 @@ input.txt{font:500 16px var(--f-ui)}
 .prompt .it.hz{font-family:var(--f-hanzi);font-size:32px;letter-spacing:.08em}
 .gap{display:inline-block;width:1em;height:1em;border:2px dashed var(--jade);border-radius:3px;vertical-align:-0.12em;margin:0 .04em}
 .ver{margin:6px 0 0;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+
+/* tabs */
+.tabs{display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:4px;background:var(--sheet);border:1px solid var(--line);border-radius:12px}
+.tab{appearance:none;border:none;background:transparent;color:var(--muted);font:600 15px var(--f-ui);padding:10px 8px;border-radius:9px;cursor:pointer}
+.tab[aria-pressed="true"]{background:var(--jade);color:var(--sheet)}
+.tab:focus-visible,.rbtn:focus-visible,.mini:focus-visible{outline:3px solid var(--grid);outline-offset:2px}
+/* flashcard home */
+.fcstats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.stat{display:flex;flex-direction:column;align-items:center;gap:2px;padding:12px 6px;border-radius:10px;background:var(--paper)}
+.stat .num{font:700 30px var(--f-ui);color:var(--jade);font-variant-numeric:tabular-nums;line-height:1.1}
+.stat .cap{font-size:12px;color:var(--muted);text-align:center}
+.progline{font-size:14px;color:var(--muted);margin-bottom:6px;font-variant-numeric:tabular-nums}
+.progline b{color:var(--ink)}
+.bar.two{position:relative;height:8px;border-radius:4px}
+.bar.two i{position:absolute;left:0;top:0;bottom:0;border-radius:4px}
+.bar.two #fcProgSeen{background:var(--grid)}
+.bar.two #fcProgDone{background:var(--jade)}
+.filebtn{display:inline-flex;align-items:center;justify-content:center;text-align:center;flex:1 1 140px;box-sizing:border-box}
+/* card */
+.card{min-height:260px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;padding:18px 8px;border:1.5px solid var(--line);border-radius:14px;background:var(--paper)}
+.card .lv{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.bighz{font:700 64px var(--f-hanzi);line-height:1.15;letter-spacing:.06em;overflow-wrap:anywhere}
+.midhz{font:700 40px var(--f-hanzi);line-height:1.2;letter-spacing:.06em}
+.mean{font-size:22px;font-weight:700;text-wrap:balance}
+.pyl{display:flex;align-items:center;justify-content:center;gap:8px;font-size:20px;color:var(--jade);font-weight:500}
+.exs{display:flex;flex-direction:column;gap:2px;max-width:34em;padding-top:10px;border-top:1px dashed var(--line);margin-top:4px}
+.exs .zh{font:500 20px var(--f-hanzi);line-height:1.6}
+.exs .zh b{color:var(--cinnabar);font-weight:700}
+.exs .itx{font-size:14px;color:var(--muted)}
+.exs .gapw{display:inline-block;min-width:1.6em;border-bottom:2px solid var(--jade);margin:0 .1em}
+#fcFront,#fcBack{display:flex;flex-direction:column;align-items:center;gap:10px;width:100%}
+#fcWrite{display:flex;flex-direction:column;gap:10px;width:100%;align-items:center}
+.rate{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.rbtn{appearance:none;border:1.5px solid var(--line);background:var(--sheet);color:var(--ink);border-radius:10px;padding:10px 4px;cursor:pointer;display:flex;flex-direction:column;gap:2px;align-items:center;font:600 14px var(--f-ui)}
+.rbtn span{font-size:12px;font-weight:500;color:var(--muted);font-variant-numeric:tabular-nums}
+.rbtn.again{border-color:var(--cinnabar);color:var(--cinnabar)}
+.rbtn.good{background:var(--jade);border-color:var(--jade);color:var(--sheet)}
+.rbtn.good span{color:var(--sheet);opacity:.85}
+@media (max-width:380px){.rate{grid-template-columns:1fr 1fr}}
+/* my words */
+.form{display:flex;flex-direction:column;gap:6px}
+.form label{font-size:13px;font-weight:600;color:var(--muted);margin-top:6px}
+input.hzin{font:500 20px var(--f-hanzi)}
+.mini{appearance:none;border:1.5px solid var(--line);background:transparent;color:var(--ink);font:600 13px var(--f-ui);padding:6px 10px;border-radius:8px;cursor:pointer}
+.mini.del{color:var(--cinnabar);border-color:var(--cinnabar)}
+.mrow{display:grid;grid-template-columns:auto 1fr auto;gap:4px 12px;padding:10px 0;border-bottom:1px solid var(--line);align-items:center}
+.mrow .h{font:700 22px var(--f-hanzi)}
+.mrow .m{min-width:0;font-size:14px;color:var(--muted);overflow-wrap:anywhere}
+.mrow .m b{color:var(--ink);font-weight:600}
+.mrow .acts{display:flex;gap:6px}
+
+/* weak words + list */
+.weakbox{display:flex;flex-direction:column;gap:10px;padding:14px;border-radius:10px;border:1.5px solid var(--cinnabar);background:var(--cin-soft)}
+.wk-head{display:flex;gap:12px;align-items:center}
+.wk-num{font:700 34px var(--f-ui);color:var(--cinnabar);font-variant-numeric:tabular-nums;min-width:1.4em;text-align:center}
+.fltabs{display:grid;grid-template-columns:repeat(4,1fr);gap:4px}
+.fltab{appearance:none;border:1.5px solid var(--line);background:transparent;color:var(--ink);border-radius:10px;padding:8px 4px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px;font:600 12px var(--f-ui)}
+.fltab b{font-size:20px;font-variant-numeric:tabular-nums}
+.fltab[aria-selected="true"]{background:var(--ink);color:var(--sheet);border-color:var(--ink)}
+.fltab.weak b{color:var(--cinnabar)} .fltab.weak[aria-selected="true"]{background:var(--cinnabar);border-color:var(--cinnabar)} .fltab.weak[aria-selected="true"] b{color:var(--sheet)}
+.fltab:focus-visible{outline:3px solid var(--grid);outline-offset:2px}
+.frow{display:grid;grid-template-columns:auto 1fr auto;gap:2px 12px;padding:10px 0;border-bottom:1px solid var(--line);align-items:center}
+.frow .h{font:700 22px var(--f-hanzi)}
+.frow .m{min-width:0;font-size:14px;color:var(--muted);overflow-wrap:anywhere}
+.frow .m b{color:var(--ink);font-weight:600}
+.frow .s{font-size:12px;color:var(--muted);text-align:right;font-variant-numeric:tabular-nums}
+.pill{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.04em;padding:2px 8px;border-radius:999px;margin-bottom:3px}
+.pill.weak{background:var(--cin-soft);color:var(--cinnabar)} .pill.learn{background:var(--jade-soft);color:var(--jade)} .pill.done{background:var(--jade);color:var(--sheet)}
+.weakbox.calm{border-color:var(--line);background:var(--paper)}
+.weakbox.calm .wk-num{color:var(--jade)}
+.mini.flag{align-self:center}
+.mini.flag[aria-pressed="true"]{background:var(--cin-soft);color:var(--cinnabar);border-color:var(--cinnabar)}
+@media (max-width:380px){.fltab{font-size:11px}}
+
+.newdeck{display:flex;flex-direction:column;gap:8px}
+textarea.area{width:100%;box-sizing:border-box;font:500 18px var(--f-hanzi);padding:10px 12px;border:1.5px solid var(--line);border-radius:10px;background:var(--paper);color:var(--ink);resize:vertical;line-height:1.5}
+textarea.area::placeholder,input.hzin::placeholder{font:400 15px var(--f-ui);color:var(--muted)}
+textarea.area:focus-visible{outline:3px solid var(--grid);outline-offset:2px}
+.one{border:1.5px solid var(--line);border-radius:10px;padding:10px 12px}
+div.one .label{margin:0 0 4px}
+details.one summary{cursor:pointer;font-weight:600}
+details.one[open] summary{margin-bottom:6px}
+.nomean{color:var(--cinnabar);font-weight:600}
+.chips .sep{flex-basis:100%;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+
+.addbox{display:flex;flex-direction:column;gap:12px}
+.atabs{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;padding:3px;background:var(--paper);border-radius:9px}
+.atab{appearance:none;border:none;background:transparent;color:var(--muted);font:600 13px var(--f-ui);padding:8px 4px;border-radius:7px;cursor:pointer}
+.atab[aria-selected="true"]{background:var(--sheet);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.atab:focus-visible{outline:3px solid var(--grid);outline-offset:2px}
+.apanel{display:flex;flex-direction:column;gap:8px}
+input[type=search].txt{width:100%;box-sizing:border-box;font:500 16px var(--f-ui);padding:10px 12px;border:1.5px solid var(--line);border-radius:10px;background:var(--paper);color:var(--ink);-webkit-appearance:none;appearance:none}
+input[type=search].txt:focus-visible{outline:3px solid var(--grid);outline-offset:2px}
+.apanel .label{margin:0}
+.list.pk{max-height:420px;overflow-y:auto;border:1px solid var(--line);border-radius:10px;padding:0 10px}
+.pkrow{display:grid;grid-template-columns:auto auto 1fr auto;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line);cursor:pointer}
+.pkrow:last-child{border-bottom:none}
+.pkrow input{width:20px;height:20px;accent-color:var(--jade);margin:0}
+.pkrow .h{font:700 20px var(--f-hanzi)}
+.pkrow .m{min-width:0;font-size:13px;color:var(--muted);overflow-wrap:anywhere}
+.pkrow .m b{color:var(--ink);font-weight:600}
+.pkrow .lv{font-size:11px;font-weight:700;color:var(--muted);white-space:nowrap}
+.pkrow.have{opacity:.5;cursor:default}
+.pkbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.pkbar .btn{flex:1 1 160px}
+
+.mylists{display:flex;flex-direction:column;gap:8px}
+.ml{display:grid;grid-template-columns:1fr auto;gap:8px 10px;align-items:center;padding:12px;border-radius:10px;background:var(--sheet);border:1.5px solid var(--line)}
+.ml.cur{border-color:var(--jade)}
+.ml .nm{font-weight:700;min-width:0;overflow-wrap:anywhere}
+.ml .nm small{display:block;font-weight:500;color:var(--muted);font-size:13px}
+.ml .acts{grid-column:1 / -1;display:flex;gap:6px;flex-wrap:wrap}
+.ml .acts .btn{flex:1 1 110px;padding:9px 10px;font-size:14px}
+.ml .tag{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--jade)}
 .credit{font-size:14px;color:var(--ink);margin:0 0 6px}
 .credit b{font-weight:700}
 .credit .mail{color:var(--jade);font-weight:600;user-select:all;overflow-wrap:anywhere}
@@ -129,8 +243,12 @@ input.txt{font:500 16px var(--f-ui)}
 <div class="wrap">
   <header>
     <h1>默写挑战<small>HSK 1–4</small></h1>
-    <p class="sub">Vedi il significato, scrivi il carattere.</p>
+    <p class="sub" id="subline">Vedi il significato, scrivi il carattere.</p>
   </header>
+  <nav class="tabs" aria-label="Sezioni">
+    <button type="button" class="tab" id="tabDict" aria-pressed="true">默写 · Dettato</button>
+    <button type="button" class="tab" id="tabFc" aria-pressed="false">闪卡 · Flashcard</button>
+  </nav>
 
   <!-- SETUP -->
   <section class="sheet" id="setup">
@@ -230,12 +348,195 @@ input.txt{font:500 16px var(--f-ui)}
       <button class="btn" id="again">Nuova partita</button>
       <button class="btn warn" id="redo">Riprova gli errori</button>
     </div>
+    <div class="row">
+      <button class="btn ghost" id="toFc">Aggiungi gli errori alle mie flashcard</button>
+    </div>
+  </section>
+
+  <!-- FLASHCARD: HOME -->
+  <section class="sheet" id="fcHome" hidden>
+    <div>
+      <p class="label">Che cosa studi</p>
+      <div class="chips" id="fcDecks"></div>
+    </div>
+    <div class="fcstats">
+      <div class="stat"><span class="num" id="fcDue">0</span><span class="cap">da ripassare</span></div>
+      <div class="stat"><span class="num" id="fcNew">0</span><span class="cap">nuove oggi</span></div>
+      <div class="stat"><span class="num" id="fcStreak">0</span><span class="cap" id="fcStreakCap">giorni di fila</span></div>
+    </div>
+    <div>
+      <div class="progline"><span id="fcProgTxt"></span></div>
+      <div class="bar two"><i id="fcProgSeen"></i><i id="fcProgDone"></i></div>
+      <p class="hint">Verde scuro: parole consolidate (ripasso dopo 3 settimane o più). Verde chiaro: parole già viste.</p>
+    </div>
+    <div class="row">
+      <button class="btn" id="fcStart">Inizia</button>
+    </div>
+    <div class="weakbox" id="fcWeakBox">
+      <div class="wk-head"><span class="wk-num" id="fcWeakN">0</span><span><b>parole da rinforzare</b><br><span class="hint" style="margin:0">Quelle che sbagli più spesso. Allenale nel dettato: dopo due risposte giuste escono dall'elenco.</span></span></div>
+      <div class="row">
+        <button class="btn warn" id="fcWeakDict">Allenale nel dettato</button>
+        <button class="btn ghost" id="fcList">I miei progressi</button>
+      </div>
+    </div>
+    <p class="hint" id="fcDoneMsg" hidden></p>
+    <div class="row" id="fcMoreRow" hidden>
+      <button class="btn ghost" id="fcMore">Studia altre 10 parole nuove</button>
+    </div>
+    <div>
+      <p class="label">Parole nuove al giorno</p>
+      <div class="chips" id="fcPerDay"></div>
+    </div>
+    <div class="pdfbox">
+      <p class="label">Le mie liste</p>
+      <p class="hint" style="margin:0">Crea liste con le parole che vuoi studiare (una lezione, un testo, un esame), oppure importa una lista ricevuta dal docente.</p>
+      <div class="mylists" id="fcMyLists"></div>
+      <div class="row">
+        <button class="btn ghost" id="fcNewDeck">Nuova lista</button>
+        <label class="btn ghost filebtn" for="fcDeckFile">Importa una lista</label>
+        <input type="file" id="fcDeckFile" accept=".csv,.txt,text/csv,text/plain" hidden>
+      </div>
+      <div class="newdeck" id="fcNewDeckRow" hidden>
+        <label for="fcNewName" class="hint" style="margin:0">Nome della lista</label>
+        <input type="text" id="fcNewName" class="txt" placeholder="es. Lezione 3" autocomplete="off" maxlength="40">
+        <div class="row"><button class="btn" id="fcNewOk">Crea</button><button class="btn ghost" id="fcNewNo">Annulla</button></div>
+      </div>
+      <p class="hint" id="fcDeckMsg" hidden></p>
+    </div>
+    <div class="pdfbox">
+      <p class="label">Backup dei progressi</p>
+      <p class="hint" style="margin:0">I progressi restano solo su questo dispositivo. Prima di cambiare telefono o cancellare i dati del browser, esporta un file di backup.</p>
+      <div class="row">
+        <button class="btn ghost" id="fcExport">Esporta</button>
+        <label class="btn ghost filebtn" for="fcImportFile">Importa</label>
+        <input type="file" id="fcImportFile" accept=".json,application/json" hidden>
+      </div>
+      <div class="row" id="fcImportRow" hidden>
+        <button class="btn warn" id="fcImportOk">Sostituisci i progressi con il backup</button>
+        <button class="btn ghost" id="fcImportNo">Annulla</button>
+      </div>
+      <p class="hint" id="fcBackupMsg" hidden></p>
+    </div>
+  </section>
+
+  <!-- FLASHCARD: CARD -->
+  <section class="sheet" id="fcCard" hidden>
+    <div class="topbar"><span id="fcLeft"></span><span id="fcDeckName"></span></div>
+    <div class="card" id="fcFace">
+      <span class="lv" id="fcKind"></span>
+      <div id="fcFront"></div>
+      <div id="fcBack" hidden></div>
+      <div id="fcWrite" hidden>
+        <div class="tiles" id="fcTiles"></div>
+        <div class="stage" id="fcStage">
+          <svg class="grid" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+            <line x1="0" y1="0" x2="100" y2="100"/><line x1="100" y1="0" x2="0" y2="100"/>
+            <line x1="50" y1="0" x2="50" y2="100"/><line x1="0" y1="50" x2="100" y2="50"/>
+          </svg>
+          <div id="fcTarget"></div>
+        </div>
+      </div>
+    </div>
+    <div class="row" id="fcShowRow">
+      <button class="btn" id="fcShow">Mostra la risposta</button>
+      <button class="btn ghost" id="fcWriteBtn" hidden>Scrivi sullo schermo</button>
+    </div>
+    <div class="rate" id="fcRateRow" hidden>
+      <button class="rbtn again" data-r="0"><b>Non la so</b><span></span></button>
+      <button class="rbtn hard" data-r="1"><b>Difficile</b><span></span></button>
+      <button class="rbtn good" data-r="2"><b>Bene</b><span></span></button>
+      <button class="rbtn easy" data-r="3"><b>Facile</b><span></span></button>
+    </div>
+    <button class="mini flag" id="fcFlag" type="button" hidden>Da rinforzare</button>
+    <button class="btn ghost" id="fcQuit" style="align-self:center;padding:6px 12px;font-size:14px">Termina</button>
+  </section>
+
+  <!-- FLASHCARD: LIST -->
+  <section class="sheet" id="fcListSec" hidden>
+    <div class="topbar"><span id="flDeck"></span><button class="mini" id="flBack" type="button">Torna alle flashcard</button></div>
+    <div class="fltabs" id="flTabs" role="tablist"></div>
+    <p class="hint" id="flHint"></p>
+    <div class="row" id="flActs" hidden>
+      <button class="btn warn" id="flDict">Allenale nel dettato</button>
+      <button class="btn ghost" id="flPdf">Crea il 字帖 in PDF</button>
+    </div>
+    <p class="hint" id="flMsg" hidden></p>
+    <div class="list" id="flRows"></div>
+  </section>
+
+  <!-- FLASHCARD: EDIT A DECK -->
+  <section class="sheet" id="fcMine" hidden>
+    <div class="topbar"><span>Modifica lista</span><button class="mini" id="mBack" type="button">Torna alle flashcard</button></div>
+    <div class="form">
+      <label for="mName">Nome della lista</label>
+      <input type="text" id="mName" class="txt" autocomplete="off" maxlength="40">
+    </div>
+    <div class="one addbox">
+      <div class="atabs" role="tablist" aria-label="Come aggiungere">
+        <button type="button" class="atab" data-p="mOne" aria-selected="true">Una parola</button>
+        <button type="button" class="atab" data-p="mMany" aria-selected="false">Più parole</button>
+        <button type="button" class="atab" data-p="mHsk" aria-selected="false">Dalle liste HSK</button>
+      </div>
+      <div class="apanel" id="mOne">
+        <p class="label" id="mOneTitle">Aggiungi una parola</p>
+      <div class="form">
+        <label for="mW">Parola o carattere *</label>
+        <input type="text" id="mW" class="txt hzin" placeholder="es. 沟通" autocomplete="off">
+        <label for="mP">Pinyin</label>
+        <input type="text" id="mP" class="txt" placeholder="si compila da solo, puoi correggerlo" autocomplete="off">
+        <label for="mI">Significato in italiano</label>
+        <input type="text" id="mI" class="txt" placeholder="es. comunicare" autocomplete="off">
+        <label for="mE">Frase di esempio (facoltativa)</label>
+        <input type="text" id="mE" class="txt hzin" placeholder="es. 我们要多沟通。" autocomplete="off">
+        <label for="mEI">Traduzione della frase (facoltativa)</label>
+        <input type="text" id="mEI" class="txt" autocomplete="off">
+      </div>
+      <p class="hint" id="mMsg" hidden></p>
+      <div class="row">
+        <button class="btn" id="mSave">Aggiungi</button>
+        <button class="btn ghost" id="mCancel" hidden>Annulla modifica</button>
+      </div>
+    </div>
+      <div class="apanel" id="mMany" hidden>
+      <textarea id="mBulk" class="txt area" rows="5" placeholder="Una parola per riga, oppure separate da spazi:&#10;沟通 交流 讨论&#10;&#10;Puoi anche incollare righe da Excel:&#10;parola ⇥ pinyin ⇥ italiano ⇥ esempio ⇥ traduzione"></textarea>
+      <p class="hint">Per le parole HSK pinyin e significato si compilano da soli. Per le altre il pinyin si compila da solo; il significato puoi aggiungerlo dopo con "Modifica".</p>
+      <div class="row"><button class="btn" id="mBulkAdd">Aggiungi le parole</button></div>
+      <p class="hint" id="mBulkMsg" hidden></p>
+      </div>
+      <div class="apanel" id="mHsk" hidden>
+        <div class="chips" id="pkLevels"></div>
+        <input type="search" id="pkQ" class="txt" placeholder="Cerca: 学, xue, studiare…" autocomplete="off">
+        <p class="hint" id="pkInfo"></p>
+        <div class="list pk" id="pkList"></div>
+        <div class="row" id="pkMoreRow" hidden><button class="btn ghost" id="pkMore">Mostra altre</button></div>
+        <div class="pkbar">
+          <button class="mini" id="pkAll" type="button">Seleziona tutte</button>
+          <button class="mini" id="pkNone" type="button">Deseleziona</button>
+          <button class="btn" id="pkAdd" disabled>Aggiungi alla lista</button>
+        </div>
+        <p class="hint" id="pkMsg" hidden></p>
+      </div>
+    </div>
+
+    <div>
+      <p class="label" id="mCount">Parole</p>
+      <div class="list" id="mList"></div>
+    </div>
+    <div class="pdfbox">
+      <p class="label">Condividi o elimina</p>
+      <p class="hint" style="margin:0">"Esporta" crea un file con le parole della lista (senza i tuoi progressi). Chi lo riceve lo apre con "Importa una lista".</p>
+      <div class="row">
+        <button class="btn ghost" id="mExport">Esporta la lista</button>
+        <button class="btn warn" id="mDelete">Elimina la lista</button>
+      </div>
+      <p class="hint" id="mDeckMsg" hidden></p>
+    </div>
   </section>
 
   <footer>
     <p class="credit">A cura di <b>Ying Liu</b> · Università Ca' Foscari Venezia · <span class="mail">ying.liu@unive.it</span></p>
     Tratti: Hanzi Writer · Make Me a Hanzi (Arphic Public License) · Lessico HSK 3.0 (standard 2021), livelli 1–4
-    <p class="ver">versione 2026-11-02-5</p></footer>
+    <p class="ver">versione 2026-11-02-14</p></footer>
 </div>
 
 <script src="hanzi-writer.min.js"></script>
@@ -423,7 +724,15 @@ $('zitie').onclick=async()=>{
   }catch(e){ m.hidden=false; m.textContent='Non è stato possibile creare il PDF.'; }
   finally{ b.disabled=false; b.textContent='Crea il 字帖 in PDF'; }
 };
-function show(id){ ['setup','quiz','results'].forEach(s=>$(s).hidden = s!==id); window.scrollTo(0,0); }
+const SECTIONS=['setup','quiz','results','fcHome','fcCard','fcMine','fcListSec'];
+function show(id){
+  SECTIONS.forEach(s=>$(s).hidden = s!==id);
+  const fc=id.startsWith('fc');
+  $('tabDict').setAttribute('aria-pressed',!fc); $('tabFc').setAttribute('aria-pressed',fc);
+  $('subline').textContent = fc ? 'Ripassa le parole al momento giusto, ogni giorno pochi minuti.' : 'Vedi il significato, scrivi il carattere.';
+  try{ localStorage.setItem('mxTab', fc?'fc':'dict'); }catch(e){}
+  window.scrollTo(0,0);
+}
 
 function makeWriter(el, ch, size, opts={}){
   return HanziWriter.create(el, ch, Object.assign({
@@ -499,6 +808,7 @@ function finishWord(ok){
   const v=round[qi];
   if(!ok && !badChars.size) [...v.w].forEach(c=>badChars.add(c));
   log.push({v:{...v}, ok, bad:[...badChars], mistakes: state.mode==='screen'?wordMistakes:null});
+  fcFromDictation(v.w, ok);   // the dictation result updates the flashcard weak-word list
   if(ok){ correct++; $('status').textContent='Giusto!'; $('status').className='status ok';
           store.set(store.get().filter(w=>w!==errKey(v))); }
   else { wrongList.push(v); $('status').textContent=v.w+' — da ripassare'; $('status').className='status ko';
@@ -576,6 +886,7 @@ function results(){
     b.onclick=()=>{ if(box.hidden){ box.hidden=false; if(ws) playAll(ws); else ws=animBoxes(box,[...v.w],110); } else playAll(ws); };
     row.appendChild(b); row.appendChild(box); l.appendChild(row); });
   $('redo').hidden=!wrongList.length;
+  $('toFc').hidden=!wrongList.length; $('toFc').disabled=false; $('toFc').textContent='Aggiungi gli errori alle mie flashcard';
   $('pdf').disabled=!done; $('pdfmsg').className='hint';
   $('pdfmsg').textContent= wrongList.length
     ? 'Il PDF contiene il report della prova e un foglio di esercizio 字帖 per ogni carattere sbagliato: ordine dei tratti, caratteri da ricalcare e quadretti vuoti.'
@@ -746,6 +1057,667 @@ $('pdf').onclick=async()=>{
   b.disabled=false; b.textContent='Scarica il PDF';
 };
 
+
+/* ---------- flashcard (spaced repetition) ---------- */
+const FC = {"order":{"1":["我","我们","是","还是","是不是","你","你们","在","现在","正在","在家","不","不用","不对","对不起","有","没有","还有","有些","他","他们","这","这些","这里","这儿","就","个","和","人","女人","别人","男人","说","说话","要","重要","好","最好","好看","好吃","一","一起","一些","一样","会","开会","一会儿","也","都","对","到","看到","找到","得到","上","身上","晚上","马上","来","起来","出来","回来","的","别的","真的","有的","很","了","还","着","去","出去","去年","回去","吧","她","她们","过","想","吗","给","呢","能","地","地方","地上","地图","那","那些","那里","那边","们","看","看见","看病","做","什么","怎么","没什么","干什么","点","地点","一点儿","没","没关系","没事儿","大","大学","不大","大学生","从","下","下午","下次","下班","中","中国","中间","中午","里","哪里","家里","里边","真","认真","年","今年","明年","新年","用","有用","多","多少","两","等","天","今天","明天","昨天","出","太","最","最后","再","再见","次","上次","小","小时","小姐","小学","知道","知识","时候","时间","有时","有时候","走","走路","工作","动作","工人","事","后","后天","后边","家","国家","回家","家人","前","前天","前边","爱","爱好","跟","喜欢","吃","吃饭","谁","新","找","打","打开","打球","打电话","快","比","话","电话","觉得","记得","睡觉","月","起","起床","几","见","见面","听见","车","汽车","车上","开车","手","手机","洗手间","听","听到","好听","听写","常","非常","常常","开","开玩笑","叫","子","孩子","儿子","房子","别","请","请问","请假","请进","钱","钱包","本","本子","课本","回","回到","回答","西","东","东西","西边","三","买","问","告诉","老","老师","老人","岁","行","号","放","放假","放学","朋友","女朋友","男朋友","小朋友","住","记住","拿","高","高兴","正","先","先生","准备","水","水果","进","进去","进来","写","您","女","女儿","女生","女孩儿","送","分","笑","帮","帮忙","日","生日","日期","星期日","站","车站","路","路上","马路","路口","门","门口","门票","喝","穿","学","学校","学生","学习","花","坐","坐下","请坐","早","早上","早饭","干","干净","认识","睡","四","块","一块儿","外","国外","外国","外语","妈","妈妈","球","谢谢","二","第","第二","错","少","难","电","电影","电视","电脑","间","房间","哪","哪儿","哪些","跑","晚","晚饭","书","读书","书店","图书馆","五","男","男生","男孩儿","动","医院","医生","学院","电影院","重","远","口","白","明白","白天","杯","杯子","歌","唱歌","半","一半","半天","半年","身体","元","包","面包","书包","包子","楼","楼下","楼上","教学楼","飞","飞机","介绍","六","唱","病","病人","生病","字","名字","有名","汉字","忙","十","爸","爸爸","热","试","考试","来到","票","机票","车票","床","差","教","读","忘","忘记","冷","山","记","关","关上","哥","哥哥","风","累","肉","休息","班","上班","坏","一边","旁边","这边","右边","洗","毛","八","左","左边","七","菜","衣服","饿","树","右","姐","姐姐","课","上课","下课","课文","国","饭","饭店","午饭","米饭","天气","生气","星期天","不客气","南","南边","慢","同学","上学","中学","小学生","北","北京","北边","茶","雨","下雨","星期","考","九","妹","妹妹","上午","网上","上网","上车","贵","机场","商场","电视机","页","弟","弟弟","百","奶","奶奶","牛奶","火车","下车","打车","爷爷","那儿","玩儿","好玩儿","小孩儿","商店","鸡蛋","零","桌子","中文","中学生","渴","外边","上边","东边","下边","汉语","网友","面条儿","一下儿","有一些"],"2":["让","但","但是","不但","自己","来自","自由","自行车","可以","可能","所以","可是","为","因为","认为","成为","已经","经过","经常","经理","这样","这么","那样","怎样","如果","结果","比如","不如","又","只","只要","只能","题","问题","难题","问路","它","它们","该","应该","更","才","刚才","像","好像","当","当时","那么","为什么","怎么样","怎么办","向","方向","带","带来","位","单位","座位","大家","家庭","长大","大量","啊","发","发现","出现","实现","得","取得","懂得","得出","一定","一直","一般","一生","生","生活","活动","出生","不过","不要","通过","过去","公司","司机","公园","办公室","成","完成","变成","成绩","名","名单","姓名","报名","所有","有人","有意思","有点儿","而且","必须","长","家长","队长","校长","其他","其中","事情","故事","爱情","心情","感觉","感谢","感到","感动","然后","以后","虽然","后来","条","条件","场","广场","球场","停车场","件","进行","进入","行动","行为","或","或者","头","头发","点头","里头","见到","想到","做到","受到","周","周末","上周","周年","加","参加","加油","参观","全","安全","完全","全部","不错","不同","不少","不够","机会","相机","晚会","计算机","完","计划","求","要求","主要","就要","信","相信","信息","信号","队","球队","排队","接","接受","直接","接着","刚","刚刚","原因","原来","分钟","部分","十分","大部分","人们","咱们","大人","主人","道","味道","道路","道理","够","能够","拉","帮助","变","改变","努力","以前","以为","面前","以下","办","办法","方法","想法","特别","特点","真正","正常","正确","正是","掉","讲","讲话","听讲","离","离开","开心","分开","万","片","照片","图片","影片","同时","同样","那时","随时","越","越来越","组","小组","组成","组长","卖","外卖","选","句","句子","响","影响","永远","面","方面","方便","南方","也许","许多","份","月份","近","最近","换","狗","靠","脸","快乐","音乐","快要","音乐会","使用","作用","常用","信用卡","段","查","检查","中心","关心","心里","小心","米","懂","卡","银行卡","过来","超过","难过","接下来","算","打算","辆","车辆","药","药店","药水","药片","留","留下","留学生","交","交给","交通","交朋友","套","黑","黑色","黑板","店","酒店","服务","舒服","挺","挺好","克","千克","愿意","意思","意见","满意","装","座","往","眼","眼睛","清楚","停","停车","银行","举行","不行","旅行","气","空气","气温","倒","酒","红","红色","欢迎","可爱","可怕","爱人","边","身边","路边","海边","闻","新闻","重新","收","收到","收入","声音","大声","小声","音节","数","数字","人数","大多数","哭","怕","亮","漂亮","月亮","提","提出","提高","提到","度","态度","角度","温度","低","节","节目","目的","节日","健康","弄","满","不满","说明","听说","明星","小说","短","短信","脚","市","市长","超市","讨论","假","假期","休假","嘴","改","省","海","大海","夜","半夜","夜里","称","名称","轻","年轻","青年","少年","晚安","安静","平安","晚餐","画","画家","画儿","广告","运动","动物","动物园","样子","日子","椅子","什么样","猫","通","通知","普通","普通话","排","排球","鱼","教育","体育","教师","教学","取","层","腿","全国","国际","全体","全身","街","笔","笔记","笔记本","鞋","球鞋","习惯","练习","实习","复习","推","油","科","科学","学期","科学家","喂","流","流行","流利","实在","实际","表","手表","船","养","鸡","遍","瓶","瓶子","重点","观点","重复","重视","级","高级","年级","中级","顺利","一路顺风","平","水平","公平","平时","网","网站","网球","借","封","蛋","占","词","词语","词典","生词","鸟","想起","理想","起飞","蓝","蓝色","纸","报纸","背","照顾","顾客","护照","照相","急","疼","礼物","食物","篇","出口","出发","人口","出租车","接到","到处","碰到","等到","千","墙","黄","黄色","好多","多么","多久","差不多","吹","颜色","绿色","白色","语言","英语","地球","地铁","篮球","外地","雪","下雪","心中","高中","信心","放心","灯","太阳","太太","不太","爬","爬山","喊","随便","便宜","方便面","合适","相同","同事","以上","以外","天上","答应","热情","放下","零下","下周","早就","早餐","早晨","的话","对话","笑话","笑话儿","骑","骑车","河","练","举","举手","租","出租","角","公路","公里","公斤","公共汽车","故意","不好意思","看法","做法","难看","草","草地","湖","正好","好处","好事","好久","院","住院","院长","院子","旅游","游客","旅客","作业","作家","作文","叫作","绿","送给","送到","不久","不一定","不一会儿","客人","好人","商人","坏人","例如","比如说","碰","碰见","请求","请客","准确","碗","夏天","冬天","春天","秋天","出门","大门","找出","出国","熟","这时","大小","从小","小时候","咱","友好","老朋友","亿","云","多云","花园","校园","等于","平等","洗澡","洗衣机","今后","大大","大衣","大自然","姓","难受","难听","刻","对面","少数","中年","老年","青少年","阴","阴天","凉","凉快","平常","常见","一路平安","商量","午餐","快餐","中餐","午睡","一共","分数","一部分","一点点","多数","西方","北方","东方","西南","忽然","拿到","拿出","脏","全家","全年","饱","打工","打印","星星","例子","筷子","个子","饺子","教室","走过","走开","走进","过年","做饭","饭馆","这时候","那时候","老是","入口","东北","西北","东南","课堂","英文","住房","站住","出院","体育馆","体育场","菜单","斤","回国","关机","开机","晴","晴天","班长","日报","晚报","行人","开学","中小学","地铁站","字典","干杯","干活儿","那会儿","快点儿","有空儿","有一点儿","中医","西医","坏处","前年","春节","考生","读音","西餐","公交车","见过"],"3":["把","把握","被","被子","就是","只是","总是","要是","时","时代","时刻","及时","需要","必要","需求","开始","公开","开发","始终","并","并且","所","场所","所长","死","种","各种","种子","希望","愿望","发生","生命","发展","人生","为了","极了","除了","称为","世界","世纪","去世","世界杯","情况","感情","状况","情感","比赛","比较","决赛","相比","继续","持续","连续","手续","心","内心","伤心","决心","已","早已","张","紧张","主张","系","关系","联系","关注","内","内容","国内","总","总结","每","美","美元","美丽","完美","一切","亲切","进一步","另一方面","由","由于","理由","任何","如何","任务","责任","决定","解决","确定","规定","只有","有效","具有","只好","受","感受","受伤","使","大使馆","其实","确实","事实","实际上","连","连忙","连续剧","当然","突然","自然","仍然","部","部门","西部","部长","消息","消失","取消","消费","表现","现场","代表","表演","成功","造成","成员","成熟","结束","结婚","结合","团结","者","记者","作者","读者","转","转变","调","调查","调整","强调","方式","对方","正式","形式","处理","理解","管理","理论","强","强大","强烈","坚强","力","能力","力量","压力","保护","保证","保持","保险","管","支","支持","坚持","支付","注意","意义","同意","意外","活","拍","整","整个","个人","个性","根本","本来","基本","基本上","城","城市","市场","长城","目前","目标","前面","提前","游","游戏","游泳","马","存","存在","生存","保存","终于","属于","下来","下去","以来","从来","区","地区","区别","指","指导","指出","手指","精神","精彩","双","双方","里面","面对","上面","后面","容易","交易","合","合作","适合","作品","因此","人员","人民","人类","演员","按","按照","线","路线","报","报告","报道","告别","台","舞台","电台","电视台","明显","证明","显示","显然","伤","曾经","经历","经验","经济","另外","外面","外交","外文","简单","简直","单元","血","到底","达到","直到","到达","绝对","反对","对手","对象","派","好好","美好","好奇","技术","艺术","科技","美术","设计","设备","计算","预计","利用","胜利","费用","采用","性","性格","性别","积极性","建","建议","会议","建立","各","各位","各地","各自","约","大约","节约","抓","抓住","光","阳光","光明","不光","亲","父亲","父母","母亲","金","资金","现金","金牌","社会","体会","会员","演唱会","谈","谈判","谈话","至少","至今","缺少","负责","首先","领先","先进","首都","安排","保安","安装","不安","敢","某","随","福","幸福","幸运","失去","上去","看上去","赢","步","进步","初步","散步","事件","事业","文件","事故","训练","教练","过程","程度","课程","工程师","深","深刻","深入","选手","歌手","握手","值","值得","价值","不得不","仍","仅","不仅","仅仅","挂","类","类似","专家","专业","专门","家具","跳","跳舞","跳高","跳远","久","反应","反正","适应","应当","警察","观察","交警","相当","当地","相关","互相","困","困难","难道","难度","牛","产生","生意","生产","卫生","状态","形状","群","人群","照","环","环境","环保","火","更加","增加","加强","加快","板","老板","老太太","老百姓","祝","庆祝","危险","风险","危害","乱","救","图","图画","现实","真实","实验","事实上","断","不断","不必","判断","媒体","具体","体验","团体","痛","痛苦","观众","观看","乐观","观念","化","变化","文化","变为","追","集中","当中","集体","中华民族","破","破坏","打破","刀","传","宣传","传说","传播","错误","录","记录","纪录","录音","准","标准","批准","标题","职业","商业","工业","农业","朝","围","范围","周围","规范","速度","快速","制度","高速","空","天空","空调","空儿","左右","效果","苹果","果然","后果","架","吵架","书架","衣架","室","实验室","伟大","大概","重大","大夫","哈哈","输","运输","输入","充满","满足","补充","皮","皮包","直","直播","代","年代","现代","年纪","领","领导","导演","带领","下面","全面","表面","底下","布","宣布","公布","期","长期","短期","近期","姑娘","造","创造","制造","改造","麻烦","武器","机器","武术","思想","害怕","恐怕","龙","配","配合","分配","等待","对待","接待","演","演出","发出","退出","乐","欢乐","乐队","可乐","超级","初级","班级","猪","保","确保","保留","团","代表团","紧","赶紧","紧急","证","证据","证件","身份证","顿","共同","公共","共有","杂志","复杂","志愿","志愿者","停止","防止","奇怪","表达","表明","发表","发达","胜","慢慢","压","员","队员","员工","服务员","足够","足球","咖啡","采取","争取","千万","钟","接近","迎接","将近","和平","暖和","修","修改","价格","评价","资格","合格","旧","退","退休","交流","交往","交费","制作","制定","创作","写作","付","全球","球迷","全场","升","上升","经营","营养","初","当初","初中","年初","立刻","成立","设立","通常","通信","日常","费","浪费","收费","学费","合理","联合","组合","合法","任","信任","主任","香","香蕉","文章","文明","文字","文学","防","预防","糖","优势","优点","印象","形象","现象","复印","烟","赶","赶快","赶到","桥","迷","歌迷","基础","功能","才能","功夫","能不能","进展","前进","展开","推进","试验","考验","试题","成长","形成","成就","成果","食品","商品","美食","铁","铁路","积极","面积","汤","搬","搬家","自从","亲自","自动","从事","命运","女子","男子","裤子","屋子","尽量","数量","工具","工资","工厂","玩具","厂","背后","落后","前后","后年","显得","得分","认得","明确","声明","发明","胖","土","念","纪念","概念","村","农村","实力","动力","实行","听力","缺","缺点","主动","发动","主持","主意","甜","服装","克服","前往","眼前","往往","从前","相互","相似","互联网","话题","题目","专题","话剧","古","古代","银","银牌","羊","将来","上来","传来","看起来","啤酒","红酒","举办","办理","人才","亲人","人工","动人","离婚","整理","完整","整天","整体","吵","富","丰富","温暖","齐","整齐","飞行","行李","旅行社","较","补","公民","农民","民族","高速公路","分别","分组","石油","石头","争","订","开放","放到","播放","开展","静","访问","提问","广播","播出","推广","广大","不论","据说","自身","自主","自觉","批评","增长","生长","长处","否认","认可","否定","认出","感冒","房屋","房租","房东","属","家属","沙发","发送","发言","沙子","演唱","邮件","邮箱","邮票","电子邮件","突出","其次","热烈","热爱","场合","国庆","联合国","可靠","有利","有的是","体现","现代化","特色","彩色","景色","剧场","影视","京剧","电视剧","改进","建设","建成","头脑","木头","老头儿","家乡","故乡","巧","整整","反复","比例","创新","创业","南部","东部","北部","中部","没用","适用","应用","排名","毛病","衬衫","衬衣","坚决","必然","本事","本领","推动","生动","推开","带动","客观","做客","裙子","牌子","子女","完善","旅馆","普遍","普及","爱心","价钱","票价","干吗","加工","职工","工夫","歌声","束","气候","民间","卫生间","人民币","解开","开业","跑步","上衣","打听","听众","收听","定期","初一","一方面","果汁","就业","海关","收看","收音机","公务员","预报","报到","预习","熟人","华人","表格","功课","短裤","短处","信封","结实","请教","教材","年底","理发","绿茶","奶茶","红茶","留学","白菜","划船","凉水"],"4":["而","而是","然而","反而","却","担心","心理","承担","恶心","之后","之间","之前","之一","了解","解释","缓解","受不了","无","无法","无论","无聊","选择","挑选","此","此外","从此","作为","操作","作出","著作","呀","关于","对于","于是","处于","甚至","处","相处","政府","政治","曾","系统","总统","传统","系列","是否","否则","以及","以内","来不及","来得及","自","自信","独自","研究","究竟","研制","研究生","定","稳定","固定","说不定","考虑","思考","参考","考察","些","提供","提醒","供应","首","治","治疗","医疗","疗养","根","根据","数据","获","获得","赢得","收获","法","法律","法院","法官","局","邮局","未来","看来","来源","未必","严重","严格","体重","沉重","包括","包裹","包含","概括","项","项目","底","彻底","月底","不管","不然","不在乎","了不起","历史","简历","日历","梦","梦想","做梦","梦见","单","单独","单纯","单调","非","似乎","几乎","似的","在乎","应","宝","宝贝","宝宝","宝贵","位置","地位","装置","位于","方","方案","官方","大方","附近","近代","参与","王","手术","手里","分手","手套","加入","投入","加班","加油站","兄弟","遇","遇到","遇见","迟到","轮","轮椅","轮子","轮船","地址","土地","地下","地面","投","投资","投诉","资料","材料","资源","塑料","停下","下降","下载","下楼","妻子","肚子","夫妻","帽子","亲爱","喜爱","亲密","爱国","引","引起","吸引","引导","共","总共","或许","抱","律师","规律","纪律","一律","导致","一致","导游","细致","战争","挑战","战斗","战士","机构","结构","构成","机遇","反","相反","反映","伤害","空间","期间","航空","填空","冲","期待","待遇","期限","延期","承认","确认","承受","怪","型","类型","造型","大型","盘","盘子","光盘","丈夫","夫人","夫妇","翻","翻译","竟然","既然","依然","的确","倍","醒","清醒","身份","身材","转身","健身","极","极其","免费","避免","难免","牌","名牌儿","俩","产品","财产","破产","品质","测","测试","检测","预测","落","降落","著名","显著","名人","名片","寻找","帅","帅哥","网络","网址","烧","燃烧","发烧","申请","安","安置","圈","巨大","大会","扩大","大哥","老婆","老公","老实","老家","密","秘密","神秘","密码","季","季节","季度","冬季","败","失败","失望","失业","抽","抽烟","抽奖","想象","想念","没想到","教授","教训","顶","货","百货","售货员","特殊","独特","特征","特价","风格","风景","格外","及格","色","角色","出色","色彩","优秀","优美","优良","儿童","童年","童话","幼儿园","权利","利益","利息","既","距离","离不开","松","轻松","放松","轻易","敌人","人家","成人","诗人","程序","工程","顺序","毕业","企业","行业","业余","切","密切","迫切","怀疑","怀念","疑问","合同","符合","综合","同情","垃圾","戴","官","器官","外交官","替","代替","替代","兴奋","兴趣","奋斗","感兴趣","摆","摆脱","摆动","立即","独立","即将","内部","胸部","内科","在于","善于","发挥","指挥","发票","编","表情","情景","表扬","躺","采访","针","针对","对付","对比","答案","图案","规则","原则","规模","大规模","激动","刺激","移动","激烈","阶段","台阶","擦","贴","美女","女士","男女","美金","尽快","尽力","快递","痛快","药物","购物","事物","植物","销售","出售","推销","促销","吸","呼吸","吸收","招呼","冰","冰箱","冰雪","结","结论","移","转移","移民","转动","烦","付出","出席","卷","试卷","透","透明","措施","实施","设施","号码","数码","符号","型号","主题","主席","量","质量","含量","重量","闹","热闹","闹钟","盖","奖","奖金","获奖","奖学金","微笑","微信","列","列车","列入","排列","良好","善良","好友","户","窗户","归","追求","征求","脱","挑","阻止","禁止","苦","箱","箱子","兵","士兵","护士","男士","面临","临时","面试","光临","登","登记","日记","记载","充分","过分","比分","分散","批","经典","典型","背景","减","减少","减肥","回复","收回","复制","居民","居住","限制","有限","无限","制订","万一","统一","一再","一般来说","如今","假如","牙","刷牙","牙刷","细","细节","节省","维持","维护","维修","迅速","有趣","乐趣","含有","有劲儿","婚礼","刺","肥","镜头","眼镜","镜子","骨头","湿","潮湿","暗","黑暗","暗示","诗","守","保守","鲜","新鲜","新娘","鲜花","标志","黄金","黄瓜","伙","伙伴","小伙子","摸","袋","脑袋","口袋","塑料袋","祝福","辣","寄","降","降低","降温","降价","圆","圆满","睡着","着急","着火","度过","冷静","平静","寒冷","宁静","闪","闪电","勇敢","勇气","英勇","散","依靠","弱","购买","划","精力","技巧","力气","巧克力","医学","学术","学问","学分","刷","刷子","酒吧","摇","动摇","培养","培训","培育","养成","无数","无所谓","关闭","封闭","倒闭","运气","运用","运动员","动画片","姐妹","大姐","外套","套餐","外汇","聚","聚会","约会","会计","交换","交际","描述","描写","设置","布置","含","含义","总之","总理","分之","纯","纯净水","稳","平稳","玉","玉米","毫米","厘米","腰","义务","商务","家务","逐渐","渐渐","逐步","酸","酸奶","沉","沉默","默默","折","打折","财富","泪","眼泪","眼里","泪水","模型","小型","新型","模特儿","隔","隔开","宽","宽广","统计","叔叔","平均","平方","县","演讲","讲座","讲究","负担","担任","担保","战胜","街道","盐","大众","大楼","大陆","大多","改善","改正","晒","航班","培训班","末","期末","形势","形容","趋势","厚","深厚","锻炼","堵","堵车","拍照","笨","各个","个别","个体","上个月","电梯","楼梯","电源","充电","抓紧","紧密","不要紧","阵","矮","矮小","其余","哪怕","最初","薄","装修","修理","填","召开","拉开","开花","开水","唱片","相片","片面","汇","汇报","词汇","汇率","论文","争论","辩论","议论","棵","粗","粗心","多年","多次","多种","多样","青春","春季","舒适","尺","尺寸","尺子","胖子","孙子","影子","袜子","阅读","阿姨","穷","穷人","具备","吃惊","小吃","嘴巴","尾巴","巴士","大巴","扫","打扫","秘书","通知书","潮","高潮","身高","潮流","逛","灯光","电灯","事先","办事","率先","淡","江","前途","途中","用途","长途","被迫","误会","运动会","亚运会","说服","征服","台上","上门","穿上","阳台","获取","录取","汽油","汽水","浓","弯","转弯","忽视","浅","效率","遗产","遗传","没错","没法儿","保密","赞助","赞成","称赞","赞赏","打败","打针","打雷","缩小","缩短","收益","消化","诚实","实用","诚信","果实","毛衣","毛巾","集合","进口","促进","引进","口语","市区","测量","天真","燃料","原料","严","吸烟","吸管","延长","延续","性质","神话","避","伞","营业","毕业生","问候","瓜","西瓜","语音","语法","准时","按时","学时","得意","粮食","食堂","零食","豆腐","推迟","字母","预订","抄","抄写","智力","智能","手工","二手","随手","登录","登山","围巾","树林","树叶","松树","耳机","两边","分布","分为","暑假","寒假","高尚","高价","高铁","夏季","秋季","种植","种类","咸","促使","使劲","步行","热心","专心","纷纷","流传","中奖","中介","期中","看望","看不起","赏","体检","体操","宝石","新郎","积累","常识","可见","晚点","点名","列为","海水","海鲜","矿泉水","大爷","大妈","扩展","气球","暖气","熟练","构造","虫子","叶子","窗子","鲜明","爱护","味儿","方针","操场","上楼","陆地","陆续","茶叶","孙女","坚固","转告","调皮","公元","再三","能干","风俗","充电器","电动车","红包","倒车","后头","前头","本科","急忙","窗台","学年","毫升","五颜六色","括号","下个月"]},"ex":{"爱":["我爱我的家。","Amo la mia famiglia."],"爱好":["你的爱好是什么？","Qual è il tuo hobby?"],"八":["我们班有八个女生。","Nella nostra classe ci sono otto ragazze."],"爸":["爸，你回来了！","Papà, sei tornato!"],"爸爸":["我爸爸是老师。","Mio padre è insegnante."],"吧":["我们走吧。","Andiamo."],"白":["她喜欢白衣服。","Le piacciono i vestiti bianchi."],"白天":["白天我在学校上课。","Di giorno faccio lezione a scuola."],"百":["这本书一百块。","Questo libro costa cento yuan."],"班":["我们班有二十个学生。","Nella nostra classe ci sono venti studenti."],"半":["现在是三点半。","Sono le tre e mezza."],"半年":["我在北京住了半年。","Ho abitato a Pechino per sei mesi."],"半天":["我等了你半天。","Ti ho aspettato a lungo."],"帮":["你能帮我一下吗？","Puoi aiutarmi un attimo?"],"帮忙":["谢谢你帮忙！","Grazie dell'aiuto!"],"包":["你的包在桌子上。","La tua borsa è sul tavolo."],"包子":["早上我吃了两个包子。","Stamattina ho mangiato due baozi."],"杯":["我想喝一杯茶。","Vorrei bere una tazza di tè."],"杯子":["这个杯子是我的。","Questa tazza è mia."],"北":["往北走就是我们学校。","Andando verso nord c'è la nostra scuola."],"北边":["学校的北边有一个商店。","A nord della scuola c'è un negozio."],"北京":["我想去北京。","Voglio andare a Pechino."],"本":["我买了两本书。","Ho comprato due libri."],"本子":["这是我的本子。","Questo è il mio quaderno."],"比":["我比我哥哥高。","Sono più alto di mio fratello."],"别":["别说话！","Non parlare!"],"别的":["你还想吃别的吗？","Vuoi mangiare altro?"],"别人":["别人都走了。","Gli altri sono andati via tutti."],"病":["他的病好了。","Lui è guarito."],"病人":["医院里有很多病人。","In ospedale ci sono molti malati."],"不":["我不喝咖啡。","Non bevo caffè."],"不大":["这个房间不大。","Questa stanza non è molto grande."],"不对":["对不起，我说得不对。","Scusa, ho detto una cosa sbagliata."],"不客气":["“谢谢！”“不客气。”","\"Grazie!\" \"Prego.\""],"不用":["你不用去了。","Non c'è bisogno che tu vada."],"菜":["这个菜很好吃。","Questo piatto è molto buono."],"茶":["你喝茶吗？","Bevi il tè?"],"差":["他的汉语不差。","Il suo cinese non è male."],"常":["有空常来玩儿。","Vieni a trovarci spesso quando hai tempo."],"常常":["我常常去图书馆。","Vado spesso in biblioteca."],"唱":["她唱得很好。","Lei canta molto bene."],"唱歌":["我们一起唱歌吧。","Cantiamo insieme."],"车":["他的车是白色的。","La sua macchina è bianca."],"车票":["我买了两张车票。","Ho comprato due biglietti."],"车上":["车上人很多。","Sul mezzo c'è molta gente."],"车站":["我在车站等你。","Ti aspetto alla stazione."],"吃":["你想吃什么？","Che cosa vuoi mangiare?"],"吃饭":["我们去吃饭吧。","Andiamo a mangiare."],"出":["他出门了。","È uscito."],"出来":["你快出来！","Esci, presto!"],"出去":["我们出去走走吧。","Usciamo a fare due passi."],"穿":["今天很冷，你多穿点儿衣服。","Oggi fa freddo, vestiti di più."],"床":["我的床很大。","Il mio letto è molto grande."],"次":["我去过两次北京。","Sono stato a Pechino due volte."],"从":["我从学校回家。","Torno a casa da scuola."],"错":["这个字写错了。","Questo carattere è scritto male."],"打":["他在打电话。","Sta telefonando."],"打车":["我们打车去机场吧。","Prendiamo un taxi per l'aeroporto."],"打电话":["晚上我给你打电话。","Stasera ti telefono."],"打开":["请打开书。","Aprite il libro, per favore."],"打球":["下午我们去打球。","Il pomeriggio andiamo a giocare a palla."],"大":["这个房间很大。","Questa stanza è molto grande."],"大学":["我哥哥在大学学习。","Mio fratello studia all'università."],"大学生":["她是大学生。","Lei è una studentessa universitaria."],"到":["我们到北京了。","Siamo arrivati a Pechino."],"地":["他高兴地笑了。","Ha sorriso contento."],"地点":["开会的地点在哪儿？","Dov'è il luogo della riunione?"],"地方":["这是什么地方？","Che posto è questo?"],"地上":["你的书在地上。","Il tuo libro è per terra."],"地图":["我买了一张北京地图。","Ho comprato una mappa di Pechino."],"的":["这是我的书。","Questo è il mio libro."],"得到":["他得到了一个新手机。","Ha ricevuto un cellulare nuovo."],"等":["请等一下。","Aspetta un attimo, per favore."],"弟":["这是我弟，他叫小明。","Questo è mio fratello minore, si chiama Xiao Ming."],"弟弟":["我弟弟八岁。","Mio fratello minore ha otto anni."],"第":["这是我第一次来中国。","È la prima volta che vengo in Cina."],"第二":["他是第二个到的。","È stato il secondo ad arrivare."],"点":["现在几点？","Che ore sono?"],"电":["家里没电了。","A casa è andata via la luce."],"电话":["你的电话是多少？","Qual è il tuo numero di telefono?"],"电脑":["我的电脑很新。","Il mio computer è nuovo."],"电视":["晚上我看电视。","La sera guardo la televisione."],"电视机":["我家有一台电视机。","A casa abbiamo un televisore."],"电影":["我们去看电影吧。","Andiamo a vedere un film."],"电影院":["电影院在商店旁边。","Il cinema è accanto al negozio."],"东":["往东走十分钟就到了。","Andando verso est per dieci minuti si arriva."],"东边":["医院在学校东边。","L'ospedale è a est della scuola."],"东西":["你买什么东西？","Che cosa compri?"],"动":["别动！","Non muoverti!"],"动作":["老师的动作很慢。","I movimenti dell'insegnante sono lenti."],"都":["我们都是学生。","Siamo tutti studenti."],"读":["请读课文。","Leggete il testo, per favore."],"读书":["我喜欢读书。","Mi piace leggere."],"对":["你说得对。","Hai ragione."],"对不起":["对不起，我来晚了。","Scusa, sono in ritardo."],"多":["今天人很多。","Oggi c'è molta gente."],"多少":["这个多少钱？","Quanto costa questo?"],"饿":["我饿了。","Ho fame."],"儿子":["他有一个儿子。","Ha un figlio."],"二":["我有二十块钱。","Ho venti yuan."],"饭":["你吃饭了吗？","Hai mangiato?"],"饭店":["这家饭店的菜很好吃。","In questo ristorante si mangia molto bene."],"房间":["我的房间很小。","La mia camera è piccola."],"房子":["他们家的房子很大。","La loro casa è molto grande."],"放":["把书放在桌子上。","Metti il libro sul tavolo."],"放假":["明天放假。","Domani siamo in vacanza."],"放学":["几点放学？","A che ora finiscono le lezioni?"],"飞":["鸟在天上飞。","Gli uccelli volano nel cielo."],"飞机":["我坐飞机去北京。","Vado a Pechino in aereo."],"非常":["我非常高兴。","Sono molto contento."],"分":["现在是八点十分。","Sono le otto e dieci."],"风":["今天风很大。","Oggi c'è molto vento."],"干":["你在干吗？","Che stai facendo?"],"干净":["房间很干净。","La stanza è molto pulita."],"干什么":["你明天干什么？","Che cosa fai domani?"],"高":["他很高。","Lui è molto alto."],"高兴":["认识你很高兴。","Piacere di conoscerti."],"告诉":["请告诉我你的名字。","Dimmi il tuo nome, per favore."],"哥":["哥，等等我！","Fratello, aspettami!"],"哥哥":["我哥哥在北京工作。","Mio fratello lavora a Pechino."],"歌":["我喜欢这首中国歌。","Mi piace questa canzone cinese."],"个":["我有三个朋友。","Ho tre amici."],"给":["妈妈给我一本书。","La mamma mi dà un libro."],"跟":["我跟朋友一起去。","Vado con un amico."],"工人":["他爸爸是工人。","Suo padre è operaio."],"工作":["你在哪儿工作？","Dove lavori?"],"关":["请关门。","Chiudi la porta, per favore."],"关上":["请关上电视。","Spegni la televisione, per favore."],"贵":["这件衣服太贵了。","Questo vestito è troppo caro."],"国":["你是哪国人？","Di che nazionalità sei?"],"国家":["中国是一个大国家。","La Cina è un grande paese."],"国外":["她想去国外学习。","Vuole andare a studiare all'estero."],"过":["我去过中国。","Sono stato in Cina."],"还":["我还没吃饭。","Non ho ancora mangiato."],"还是":["你喝茶还是咖啡？","Bevi tè o caffè?"],"还有":["我有一个哥哥，还有一个妹妹。","Ho un fratello maggiore e anche una sorella minore."],"孩子":["他们有两个孩子。","Hanno due figli."],"汉语":["我在学汉语。","Sto studiando cinese."],"汉字":["这个汉字怎么写？","Come si scrive questo carattere?"],"好":["你好！","Ciao!"],"好吃":["妈妈做的菜很好吃。","I piatti della mamma sono molto buoni."],"好看":["这件衣服很好看。","Questo vestito è molto bello."],"好听":["这首歌很好听。","Questa canzone è molto bella."],"好玩儿":["这个游戏很好玩儿。","Questo gioco è molto divertente."],"号":["今天几号？","Che giorno è oggi?"],"喝":["你想喝什么？","Che cosa vuoi bere?"],"和":["我和你一起去。","Vengo con te."],"很":["今天很热。","Oggi fa molto caldo."],"后":["我们吃饭后去看电影。","Dopo mangiato andiamo al cinema."],"后边":["学校后边有一个商店。","Dietro la scuola c'è un negozio."],"后天":["后天是我的生日。","Dopodomani è il mio compleanno."],"花":["她买了一些花。","Ha comprato dei fiori."],"话":["我听不懂他的话。","Non capisco quello che dice."],"坏":["我的手机坏了。","Il mio cellulare si è rotto."],"回":["你什么时候回家？","Quando torni a casa?"],"回答":["请回答我的问题。","Rispondi alla mia domanda, per favore."],"回到":["我昨天回到了北京。","Ieri sono tornato a Pechino."],"回家":["我们回家吧。","Torniamo a casa."],"回来":["爸爸回来了。","Papà è tornato."],"回去":["你明天回去吗？","Torni domani?"],"会":["我会说汉语。","So parlare cinese."],"火车":["我坐火车去上海。","Vado a Shanghai in treno."],"机场":["我在机场等你。","Ti aspetto all'aeroporto."],"机票":["机票太贵了。","Il biglietto aereo è troppo caro."],"鸡蛋":["我早上吃了一个鸡蛋。","Stamattina ho mangiato un uovo."],"几":["你有几个朋友？","Quanti amici hai?"],"记":["请记一下我的电话。","Segnati il mio numero, per favore."],"记得":["你还记得我吗？","Ti ricordi ancora di me?"],"记住":["请记住这个字。","Ricorda questo carattere."],"家":["我家有四口人。","La mia famiglia è di quattro persone."],"家里":["我家里有一只猫。","A casa ho un gatto."],"家人":["我的家人都很好。","I miei familiari stanno tutti bene."],"间":["这间房很大。","Questa stanza è molto grande."],"见":["明天见！","A domani!"],"见面":["我们明天见面吧。","Vediamoci domani."],"叫":["你叫什么名字？","Come ti chiami?"],"教":["她教我们汉语。","Lei ci insegna il cinese."],"教学楼":["教学楼在图书馆旁边。","L'edificio delle aule è accanto alla biblioteca."],"介绍":["我来介绍一下。","Lascia che ti presenti."],"姐":["姐，你去哪儿？","Sorella, dove vai?"],"姐姐":["我姐姐是医生。","Mia sorella maggiore è medico."],"今年":["我今年二十岁。","Quest'anno ho vent'anni."],"今天":["今天星期几？","Che giorno della settimana è oggi?"],"进":["请进！","Avanti!"],"进来":["外边很冷，快进来！","Fuori fa freddo, entra presto!"],"进去":["你先进去吧。","Entra pure prima tu."],"九":["现在九点。","Sono le nove."],"就":["我马上就来。","Arrivo subito."],"觉得":["我觉得汉语不难。","Penso che il cinese non sia difficile."],"开":["请开门。","Apri la porta, per favore."],"开车":["爸爸开车去上班。","Papà va al lavoro in macchina."],"开会":["老师们在开会。","Gli insegnanti sono in riunione."],"开玩笑":["别开玩笑了！","Non scherzare!"],"看":["我在看书。","Sto leggendo un libro."],"看病":["我明天去医院看病。","Domani vado dal medico in ospedale."],"看到":["我看到他了。","L'ho visto."],"看见":["你看见我的手机了吗？","Hai visto il mio cellulare?"],"考":["明天考汉语。","Domani c'è l'esame di cinese."],"考试":["这次考试不难。","Questo esame non è difficile."],"渴":["我渴了，想喝水。","Ho sete, voglio bere acqua."],"课":["今天有三节课。","Oggi ci sono tre lezioni."],"课本":["请打开课本。","Aprite il libro di testo."],"课文":["这篇课文很长。","Questo testo è lungo."],"口":["请张开口。","Apri la bocca, per favore."],"块":["这个苹果五块钱。","Questa mela costa cinque yuan."],"快":["他跑得很快。","Corre molto veloce."],"来":["你什么时候来？","Quando vieni?"],"来到":["我们来到了北京。","Siamo arrivati a Pechino."],"老":["我爷爷老了。","Mio nonno è diventato anziano."],"老人":["老人走得很慢。","L'anziano cammina piano."],"老师":["王老师是中国人。","Il professor Wang è cinese."],"了":["我吃饭了。","Ho mangiato."],"累":["我今天很累。","Oggi sono molto stanco."],"冷":["今天很冷。","Oggi fa molto freddo."],"里":["书包里有什么？","Che cosa c'è nella cartella?"],"里边":["房间里边有人吗？","C'è qualcuno nella stanza?"],"两":["我有两个妹妹。","Ho due sorelle minori."],"零":["今天零度。","Oggi ci sono zero gradi."],"六":["我六点起床。","Mi alzo alle sei."],"楼":["我住在三楼。","Abito al terzo piano."],"楼上":["我的房间在楼上。","La mia camera è al piano di sopra."],"楼下":["我在楼下等你。","Ti aspetto giù."],"路":["这条路很长。","Questa strada è molto lunga."],"路口":["在前边的路口下车。","Scendi al prossimo incrocio."],"路上":["路上小心！","Fai attenzione per strada!"],"妈":["妈，我回来了！","Mamma, sono tornato!"],"妈妈":["妈妈在做饭。","La mamma sta cucinando."],"马路":["过马路要小心。","Quando attraversi la strada fai attenzione."],"马上":["我马上来。","Arrivo subito."],"吗":["你是学生吗？","Sei uno studente?"],"买":["我想买一本书。","Voglio comprare un libro."],"慢":["请说慢一点儿。","Parla più piano, per favore."],"忙":["我今天很忙。","Oggi sono molto impegnato."],"毛":["这个三块五毛。","Questo costa tre yuan e cinquanta."],"没":["我没去学校。","Non sono andato a scuola."],"没关系":["“对不起！”“没关系。”","\"Scusa!\" \"Non fa niente.\""],"没什么":["“你怎么了？”“没什么。”","\"Che hai?\" \"Niente.\""],"没事儿":["没事儿，你走吧。","Non fa niente, vai pure."],"没有":["我没有哥哥。","Non ho fratelli maggiori."],"妹":["这是我妹，她叫小红。","Questa è mia sorella minore, si chiama Xiao Hong."],"妹妹":["我妹妹很可爱。","Mia sorella minore è molto carina."],"门":["请开门。","Apri la porta, per favore."],"门口":["我在门口等你。","Ti aspetto all'ingresso."],"门票":["门票多少钱？","Quanto costa il biglietto d'ingresso?"],"们":["同学们，你们好！","Ciao a tutti, ragazzi!"],"米饭":["我想吃米饭。","Voglio mangiare il riso."],"面包":["我早上吃面包。","La mattina mangio pane."],"面条儿":["我喜欢吃面条儿。","Mi piacciono i noodles."],"名字":["你叫什么名字？","Come ti chiami?"],"明白":["我明白了。","Ho capito."],"明年":["明年我去中国。","L'anno prossimo vado in Cina."],"明天":["明天见！","A domani!"],"拿":["请拿一下我的书包。","Prendimi la cartella, per favore."],"哪":["你要哪个？","Quale vuoi?"],"哪儿":["你去哪儿？","Dove vai?"],"哪里":["你住在哪里？","Dove abiti?"],"哪些":["你去过哪些地方？","In quali posti sei stato?"],"那":["那是我的书。","Quello è il mio libro."],"那边":["我的朋友在那边。","Il mio amico è là."],"那儿":["你的手机在那儿。","Il tuo cellulare è là."],"那里":["那里有很多人。","Là c'è molta gente."],"那些":["那些书是谁的？","Di chi sono quei libri?"],"奶":["我每天喝奶。","Bevo latte ogni giorno."],"奶奶":["我奶奶七十岁了。","Mia nonna ha settant'anni."],"男":["我们班男同学多。","Nella nostra classe ci sono più ragazzi."],"男孩儿":["那个男孩儿是我弟弟。","Quel ragazzino è mio fratello minore."],"男朋友":["她有男朋友吗？","Ha il ragazzo?"],"男人":["那个男人是谁？","Chi è quell'uomo?"],"男生":["我们班有十个男生。","Nella nostra classe ci sono dieci ragazzi."],"南":["从这儿往南走就是医院。","Andando verso sud da qui c'è l'ospedale."],"南边":["学校南边有一个公园。","A sud della scuola c'è un parco."],"难":["汉语难吗？","Il cinese è difficile?"],"呢":["我很好，你呢？","Io sto bene, e tu?"],"能":["你能来吗？","Puoi venire?"],"你":["你好吗？","Come stai?"],"你们":["你们是学生吗？","Siete studenti?"],"年":["我学了一年汉语。","Ho studiato cinese per un anno."],"您":["您好！","Buongiorno! (forma di cortesia)"],"牛奶":["我每天早上喝牛奶。","Ogni mattina bevo latte."],"女":["我们老师是女的。","La nostra insegnante è una donna."],"女儿":["他有一个女儿。","Ha una figlia."],"女孩儿":["那个女孩儿很可爱。","Quella bambina è molto carina."],"女朋友":["这是我女朋友。","Questa è la mia ragazza."],"女人":["那个女人是我的老师。","Quella donna è la mia insegnante."],"女生":["我们班女生多。","Nella nostra classe ci sono più ragazze."],"旁边":["我家旁边有一个商店。","Accanto a casa mia c'è un negozio."],"跑":["他跑得很快。","Corre molto veloce."],"朋友":["他是我的好朋友。","È un mio buon amico."],"票":["我买了两张票。","Ho comprato due biglietti."],"七":["一个星期有七天。","Una settimana ha sette giorni."],"起":["我们一起去吧。","Andiamo insieme."],"起床":["你几点起床？","A che ora ti alzi?"],"起来":["大家站起来。","Alzatevi tutti."],"汽车":["他买了一辆新汽车。","Ha comprato una macchina nuova."],"前":["吃饭前要洗手。","Prima di mangiare bisogna lavarsi le mani."],"前边":["前边有一个书店。","Davanti c'è una libreria."],"前天":["前天我去了北京。","L'altro ieri sono andato a Pechino."],"钱":["我没有钱了。","Non ho più soldi."],"钱包":["我的钱包不见了。","Non trovo più il mio portafoglio."],"请":["请喝茶。","Prego, beva del tè."],"请假":["我明天想请假。","Domani vorrei chiedere un giorno di permesso."],"请进":["请进！","Avanti!"],"请问":["请问，洗手间在哪儿？","Scusi, dov'è il bagno?"],"请坐":["请坐！","Si accomodi!"],"球":["这是我的球。","Questa è la mia palla."],"去":["我明天去学校。","Domani vado a scuola."],"去年":["去年我去了中国。","L'anno scorso sono andato in Cina."],"热":["今天太热了。","Oggi fa troppo caldo."],"人":["这里人很多。","Qui c'è molta gente."],"认识":["认识你很高兴。","Piacere di conoscerti."],"认真":["他学习很认真。","Studia con molta serietà."],"日":["今天是五月一日。","Oggi è il primo maggio."],"日期":["今天的日期是几号？","Che data è oggi?"],"肉":["我不吃肉。","Non mangio carne."],"三":["我有三本书。","Ho tre libri."],"山":["我们去爬山吧。","Andiamo a fare un'escursione in montagna."],"商场":["我们去商场买衣服吧。","Andiamo al centro commerciale a comprare vestiti."],"商店":["商店几点开门？","A che ora apre il negozio?"],"上":["书在桌子上。","Il libro è sul tavolo."],"上班":["你几点上班？","A che ora vai al lavoro?"],"上边":["上边那本书是我的。","Il libro sopra è mio."],"上车":["我们上车吧。","Saliamo."],"上次":["上次你没来。","L'ultima volta non sei venuto."],"上课":["我们八点上课。","Le lezioni iniziano alle otto."],"上网":["我每天晚上上网。","Ogni sera navigo in internet."],"上午":["今天上午我有课。","Stamattina ho lezione."],"上学":["我弟弟每天走路上学。","Mio fratello va a scuola a piedi ogni giorno."],"少":["今天人很少。","Oggi c'è poca gente."],"身上":["我身上没有钱。","Non ho soldi con me."],"身体":["你身体好吗？","Stai bene di salute?"],"什么":["你说什么？","Che cosa dici?"],"生病":["他生病了，没来上课。","Si è ammalato e non è venuto a lezione."],"生气":["别生气了。","Non arrabbiarti."],"生日":["今天是我的生日。","Oggi è il mio compleanno."],"十":["我们班有十个人。","Nella nostra classe ci sono dieci persone."],"时候":["你什么时候有空？","Quando hai tempo?"],"时间":["我没有时间。","Non ho tempo."],"事":["我有事，先走了。","Ho un impegno, vado via prima."],"试":["你试试这件衣服。","Prova questo vestito."],"是":["我是意大利人。","Sono italiano."],"是不是":["你是不是学生？","Sei uno studente o no?"],"手":["吃饭前洗手。","Lavati le mani prima di mangiare."],"手机":["我的手机没电了。","Il mio cellulare è scarico."],"书":["这本书很有意思。","Questo libro è molto interessante."],"书包":["我的书包很重。","La mia cartella è pesante."],"书店":["我去书店买书。","Vado in libreria a comprare libri."],"树":["学校里有很多树。","A scuola ci sono molti alberi."],"谁":["他是谁？","Chi è lui?"],"水":["我想喝水。","Voglio bere acqua."],"水果":["我每天吃水果。","Mangio frutta ogni giorno."],"睡":["我睡了八个小时。","Ho dormito otto ore."],"睡觉":["我十一点睡觉。","Vado a dormire alle undici."],"说":["你说汉语吗？","Parli cinese?"],"说话":["请不要说话。","Per favore, non parlate."],"四":["我家有四个人。","In casa siamo in quattro."],"送":["我送你回家。","Ti accompagno a casa."],"岁":["你今年多大？我二十岁。","Quanti anni hai? Ho vent'anni."],"他":["他是我哥哥。","Lui è mio fratello maggiore."],"他们":["他们是我的同学。","Loro sono miei compagni di classe."],"她":["她是我的老师。","Lei è la mia insegnante."],"她们":["她们都是学生。","Loro sono tutte studentesse."],"太":["这个太贵了。","Questo è troppo caro."],"天":["今天天很蓝。","Oggi il cielo è molto azzurro."],"天气":["今天天气很好。","Oggi il tempo è molto bello."],"听":["我喜欢听音乐。","Mi piace ascoltare la musica."],"听到":["你听到了吗？","Hai sentito?"],"听见":["我听见有人叫我。","Ho sentito qualcuno chiamarmi."],"听写":["今天我们听写。","Oggi facciamo il dettato."],"同学":["他是我的同学。","È un mio compagno di classe."],"图书馆":["我去图书馆看书。","Vado in biblioteca a leggere."],"外":["门外有人。","C'è qualcuno fuori dalla porta."],"外边":["外边下雨了。","Fuori piove."],"外国":["我们学校有很多外国学生。","Nella nostra scuola ci sono molti studenti stranieri."],"外语":["你会说几门外语？","Quante lingue straniere parli?"],"玩儿":["我们一起去玩儿吧。","Andiamo a divertirci insieme."],"晚":["太晚了，我们回家吧。","È troppo tardi, torniamo a casa."],"晚饭":["晚饭吃什么？","Cosa mangiamo a cena?"],"晚上":["晚上我在家。","Stasera sono a casa."],"网上":["我在网上买东西。","Compro cose online."],"网友":["他是我的网友。","È un mio amico conosciuto online."],"忘":["别忘了带书。","Non dimenticare di portare il libro."],"忘记":["我忘记他的名字了。","Ho dimenticato il suo nome."],"问":["我可以问你一个问题吗？","Posso farti una domanda?"],"我":["我是学生。","Sono uno studente."],"我们":["我们是好朋友。","Siamo buoni amici."],"五":["我有五个朋友。","Ho cinque amici."],"午饭":["你午饭吃了什么？","Che cosa hai mangiato a pranzo?"],"洗":["我在洗衣服。","Sto lavando i vestiti."],"洗手间":["洗手间在哪儿？","Dov'è il bagno?"],"喜欢":["我喜欢喝茶。","Mi piace bere il tè."],"西":["往西走就是图书馆。","Andando verso ovest c'è la biblioteca."],"西边":["书店在学校西边。","La libreria è a ovest della scuola."],"下":["猫在桌子下。","Il gatto è sotto il tavolo."],"下班":["你几点下班？","A che ora esci dal lavoro?"],"下边":["你的书在桌子下边。","Il tuo libro è sotto il tavolo."],"下车":["我们在这儿下车。","Scendiamo qui."],"下次":["下次再来！","Torna la prossima volta!"],"下课":["下课了，我们走吧。","La lezione è finita, andiamo."],"下午":["今天下午我没有课。","Oggi pomeriggio non ho lezione."],"下雨":["外边下雨了。","Fuori sta piovendo."],"先":["你先走吧。","Vai pure prima tu."],"先生":["王先生是我们的老师。","Il signor Wang è il nostro insegnante."],"现在":["现在几点？","Che ore sono adesso?"],"想":["我想去中国。","Voglio andare in Cina."],"小":["我的房间很小。","La mia camera è piccola."],"小孩儿":["那个小孩儿很可爱。","Quel bambino è molto carino."],"小姐":["小姐，请问这个多少钱？","Signorina, quanto costa questo?"],"小朋友":["小朋友，你几岁了？","Piccolo, quanti anni hai?"],"小时":["我每天学习两个小时。","Studio due ore al giorno."],"小学":["我弟弟在上小学。","Mio fratello minore fa le elementari."],"小学生":["她妹妹是小学生。","Sua sorella minore è un'alunna delle elementari."],"笑":["她笑了。","Ha sorriso."],"写":["你会写这个字吗？","Sai scrivere questo carattere?"],"谢谢":["谢谢你！","Grazie!"],"新":["我买了一个新手机。","Ho comprato un cellulare nuovo."],"新年":["新年快乐！","Buon anno!"],"星期":["一个星期有七天。","Una settimana ha sette giorni."],"星期日":["星期日我在家休息。","La domenica riposo a casa."],"星期天":["星期天你有空吗？","Domenica hai tempo?"],"行":["“我们明天去，行吗？”“行。”","\"Andiamo domani, va bene?\" \"Va bene.\""],"休息":["我累了，想休息一下。","Sono stanco, voglio riposarmi un po'."],"学":["我在学汉语。","Sto imparando il cinese."],"学生":["他是我的学生。","È un mio studente."],"学习":["我们一起学习吧。","Studiamo insieme."],"学校":["我们学校很大。","La nostra scuola è molto grande."],"学院":["他在外语学院学习。","Studia all'istituto di lingue straniere."],"要":["我要一杯咖啡。","Vorrei un caffè."],"也":["我也是学生。","Anch'io sono uno studente."],"页":["请打开书，看第十页。","Aprite il libro a pagina dieci."],"爷爷":["我爷爷喜欢喝茶。","A mio nonno piace bere il tè."],"一":["我有一个哥哥。","Ho un fratello maggiore."],"一半":["我吃了一半。","Ne ho mangiato metà."],"一边":["他一边吃饭一边看电视。","Mangia e intanto guarda la televisione."],"一点儿":["我会说一点儿汉语。","So parlare un po' di cinese."],"一会儿":["请等一会儿。","Aspetta un momento, per favore."],"一块儿":["我们一块儿去吧。","Andiamo insieme."],"一起":["我们一起吃饭吧。","Mangiamo insieme."],"一下儿":["请等一下儿。","Aspetta un attimo, per favore."],"一些":["我买了一些水果。","Ho comprato un po' di frutta."],"一样":["我们两个人一样高。","Noi due siamo alti uguali."],"衣服":["她的衣服很好看。","I suoi vestiti sono molto belli."],"医生":["我妈妈是医生。","Mia madre è medico."],"医院":["他在医院工作。","Lavora in ospedale."],"用":["我可以用一下你的手机吗？","Posso usare un attimo il tuo cellulare?"],"有":["我有一个妹妹。","Ho una sorella minore."],"有的":["有的同学喜欢唱歌。","Ad alcuni compagni piace cantare."],"有名":["这家饭店很有名。","Questo ristorante è molto famoso."],"有时":["我有时去图书馆。","A volte vado in biblioteca."],"有时候":["有时候我在家吃饭。","A volte mangio a casa."],"有些":["有些人不喜欢喝茶。","Ad alcune persone non piace il tè."],"有一些":["我有一些问题。","Ho alcune domande."],"有用":["这本书很有用。","Questo libro è molto utile."],"右":["往右走。","Vai a destra."],"右边":["书店在银行右边。","La libreria è a destra della banca."],"雨":["今天雨很大。","Oggi piove forte."],"元":["这本书三十元。","Questo libro costa trenta yuan."],"远":["我家离学校很远。","Casa mia è lontana dalla scuola."],"月":["我七月去中国。","A luglio vado in Cina."],"再":["请再说一次。","Ripeti, per favore."],"再见":["再见！","Arrivederci!"],"在":["我在家。","Sono a casa."],"在家":["明天我在家。","Domani sono a casa."],"早":["早！","Buongiorno!"],"早饭":["你吃早饭了吗？","Hai fatto colazione?"],"早上":["我早上七点起床。","La mattina mi alzo alle sette."],"怎么":["这个字怎么读？","Come si legge questo carattere?"],"站":["他站在门口。","Sta in piedi all'ingresso."],"找":["你找谁？","Chi cerchi?"],"找到":["我找到我的钱包了。","Ho trovato il mio portafoglio."],"这":["这是什么？","Che cos'è questo?"],"这边":["请到这边来。","Venga da questa parte, per favore."],"这儿":["你的书在这儿。","Il tuo libro è qui."],"这里":["这里是我们的学校。","Questa è la nostra scuola."],"这些":["这些是我的朋友。","Questi sono i miei amici."],"着":["门开着。","La porta è aperta."],"真":["今天真冷！","Oggi fa davvero freddo!"],"真的":["你真的不去吗？","Davvero non vieni?"],"正":["他正在吃饭。","Sta proprio mangiando."],"正在":["我正在看书。","Sto leggendo."],"知道":["我不知道。","Non lo so."],"知识":["读书可以学到很多知识。","Leggendo si imparano molte cose."],"中":["三个人中他最高。","Dei tre, lui è il più alto."],"中国":["我想去中国。","Voglio andare in Cina."],"中间":["我坐在他们中间。","Sono seduto in mezzo a loro."],"中文":["你会说中文吗？","Sai parlare cinese?"],"中午":["我们中午一起吃饭吧。","Pranziamo insieme a mezzogiorno."],"中学":["我弟弟在上中学。","Mio fratello minore va alle medie."],"中学生":["她是中学生。","Lei è una studentessa delle medie."],"重":["这个包很重。","Questa borsa è molto pesante."],"重要":["这个问题很重要。","Questa domanda è molto importante."],"住":["你住在哪儿？","Dove abiti?"],"准备":["我准备好了。","Sono pronto."],"桌子":["书在桌子上。","Il libro è sul tavolo."],"字":["这个字怎么写？","Come si scrive questo carattere?"],"子":["桌子和椅子都是新的。","Il tavolo e le sedie sono nuovi."],"走":["我们走吧。","Andiamo."],"走路":["我每天走路去学校。","Ogni giorno vado a scuola a piedi."],"最":["他是我最好的朋友。","È il mio migliore amico."],"最好":["你最好早点儿睡觉。","Faresti meglio ad andare a letto presto."],"最后":["最后，他来了。","Alla fine è arrivato."],"昨天":["昨天我没去学校。","Ieri non sono andato a scuola."],"左":["往左走。","Vai a sinistra."],"左边":["医院在学校左边。","L'ospedale è a sinistra della scuola."],"坐":["请坐。","Si accomodi."],"坐下":["大家坐下吧。","Sedetevi tutti."],"做":["你在做什么？","Che cosa stai facendo?"]}};            // {order:{1:[words],…}, ex:{word:[sentence, traduzione]}}  (examples: HSK 1)
+const DAY = 86400000, MIN = 60000;
+const fcEsc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function today(d=new Date()){ return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
+// review days start at 4:00, so a card "due tomorrow" is ready the next morning
+function dayStart(offsetDays){ const d=new Date(); d.setHours(4,0,0,0); if(Date.now()<d.getTime()) d.setDate(d.getDate()-1); d.setDate(d.getDate()+offsetDays); return d.getTime(); }
+
+const TDECKS = [];   // decks built into the app by the teacher: [{id:'t…', name, words:[{w,p,it,ex,exIt}]}]
+function normalize(s){
+  const blank={v:1, deck:'h1', perDay:10, cards:{}, intro:{}, extra:{}, days:[], decks:[], weak:{}, weakOn:{}, miss:{}};
+  s=Object.assign(blank, s||{});
+  if(Array.isArray(s.custom)){   // older saves had a single personal list
+    if(!s.decks.some(d=>d.id==='my')) s.decks.unshift({id:'my', name:'Le mie parole', words:s.custom});
+    delete s.custom;
+  }
+  if(!s.decks.length) s.decks.push({id:'my', name:'Le mie parole', words:[]});
+  return s;
+}
+let fcs = (()=>{
+  try{ const s=JSON.parse(localStorage.getItem('mxFC')||'null'); if(s && s.v===1) return normalize(s); }catch(e){}
+  return normalize(null);
+})();
+let fcPersistAsked=false;
+function fcSave(){
+  try{ localStorage.setItem('mxFC', JSON.stringify(fcs)); }catch(e){}
+  if(!fcPersistAsked && navigator.storage && navigator.storage.persist){ fcPersistAsked=true; navigator.storage.persist().catch(()=>{}); }
+}
+
+const HSKD=[{k:'h1',t:'HSK 1'},{k:'h2',t:'HSK 2'},{k:'h3',t:'HSK 3'},{k:'h4',t:'HSK 4'}];
+function userDeck(k){ return fcs.decks.find(d=>d.id===k); }
+function listDeck(k){ return userDeck(k) || TDECKS.find(d=>d.id===k); }
+function deckName(k){ const h=HSKD.find(d=>d.k===k); if(h) return h.t; const d=listDeck(k); return d ? d.name : ''; }
+function deckWords(k){
+  const d=listDeck(k); if(d) return d.words.map(x=>x.w);
+  return FC.order[(k||'').slice(1)] || [];
+}
+function wordInfo(k,w){
+  const d=listDeck(k);
+  if(d){ const c=d.words.find(x=>x.w===w)||{}; return {w, p:c.p||'', it:c.it||'', ex:c.ex?[c.ex,c.exIt||'']:null}; }
+  const v=VOCAB.find(x=>x.w===w)||{}; return {w, p:v.p||'', it:v.it||'', ex:FC.ex[w]||null};
+}
+function anyEntry(w){   // a word as found in the HSK list or in any deck
+  const v=VOCAB.find(x=>x.w===w); if(v) return {w, p:v.p, it:v.it, l:v.l};
+  for(const d of [...TDECKS, ...fcs.decks]){ const c=d.words.find(x=>x.w===w); if(c) return {w, p:c.p, it:c.it, l:0}; }
+  return null;
+}
+const cid=(k,w,dir)=>k+'|'+w+'|'+dir;
+
+/* scheduling: a short learning phase (1 and 10 minutes), then reviews whose interval grows with each success */
+function schedule(st, r){
+  const now=Date.now(); st=st?{...st}:{ivl:0,ease:2.5,step:0,learn:true,reps:0,lapses:0};
+  st.reps++;
+  if(st.learn){
+    if(r===0){ st.step=0; st.due=now+1*MIN; }
+    else if(r===1){ st.due=now+6*MIN; }
+    else if(r===2){
+      if(st.step>=1){ st.learn=false; st.ivl=Math.max(1,st.ivl); st.due=dayStart(st.ivl); }
+      else { st.step=1; st.due=now+10*MIN; }
+    } else { st.learn=false; st.ivl=Math.max(4,st.ivl); st.due=dayStart(st.ivl); }
+  } else {
+    if(r===0){ st.lapses++; st.ease=Math.max(1.3,st.ease-.2); st.ivl=1; st.learn=true; st.step=0; st.due=now+10*MIN; }
+    else {
+      if(r===1){ st.ease=Math.max(1.3,st.ease-.15); st.ivl=Math.max(st.ivl+1,Math.round(st.ivl*1.2)); }
+      if(r===2){ st.ivl=Math.max(st.ivl+1,Math.round(st.ivl*st.ease)); }
+      if(r===3){ st.ivl=Math.max(st.ivl+1,Math.round(st.ivl*st.ease*1.3)); st.ease+=.15; }
+      st.ivl=Math.min(st.ivl,365); st.due=dayStart(st.ivl);
+    }
+  }
+  return st;
+}
+function fmtNext(st){
+  const d=st.due-Date.now();
+  if(d<60*MIN) return Math.max(1,Math.round(d/MIN))+' min';
+  const days=Math.max(1,Math.round((st.due-dayStart(0))/DAY));
+  return days<30 ? days+' g' : (days<365 ? Math.round(days/30)+' mesi' : '1 anno');
+}
+
+/* counts for the home screen */
+function introducedToday(k){ return ((fcs.intro[today()]||{})[k])||0; }
+function newAllowance(k){ return fcs.perDay + (((fcs.extra[today()]||{})[k])||0); }
+function deckStats(k){
+  const words=deckWords(k), now=Date.now(), endToday=dayStart(1);
+  let due=0, seen=0, done=0;
+  for(const w of words){
+    for(const dir of ['r','p']){ const st=fcs.cards[cid(k,w,dir)]; if(st && st.due<=Math.max(now,0) ) due++; }
+    const r=fcs.cards[cid(k,w,'r')];
+    if(r){ seen++; if(!r.learn && r.ivl>=21) done++; }
+  }
+  const unseen=words.length-seen;
+  const fresh=Math.max(0,Math.min(unseen, newAllowance(k)-introducedToday(k)));
+  return {total:words.length, due, seen, done, fresh, unseen, endToday};
+}
+function streak(){
+  const set=new Set(fcs.days); let n=0; const d=new Date();
+  if(!set.has(today(d))) d.setDate(d.getDate()-1);
+  while(set.has(today(d))){ n++; d.setDate(d.getDate()-1); }
+  return n;
+}
+
+function renderFcHome(){
+  if(!listDeck(fcs.deck) && !HSKD.some(d=>d.k===fcs.deck)) fcs.deck='h1';
+  const dk=$('fcDecks'); dk.innerHTML='';
+  const addChip=(k,t)=>dk.appendChild(chip(fcEsc(t), fcs.deck===k, ()=>{ fcs.deck=k; fcSave(); renderFcHome(); }, `<span class="n">${deckWords(k).length}</span>`));
+  const sep=t=>{ const s=document.createElement('span'); s.className='sep'; s.textContent=t; dk.appendChild(s); };
+  HSKD.forEach(d=>addChip(d.k,d.t));
+  if(TDECKS.length){ sep('Dal docente'); TDECKS.forEach(d=>addChip(d.id,d.name)); }
+  sep('Le mie liste'); fcs.decks.forEach(d=>addChip(d.id,d.name));
+  renderMyLists();
+  const pd=$('fcPerDay'); pd.innerHTML='';
+  [10,15,20].forEach(n=>pd.appendChild(chip(String(n), fcs.perDay===n, ()=>{ fcs.perDay=n; fcSave(); renderFcHome(); })));
+  const k=fcs.deck, s=deckStats(k);
+  $('fcDue').textContent=s.due; $('fcNew').textContent=s.fresh;
+  const st=streak(); $('fcStreak').textContent=st; $('fcStreakCap').textContent= st===1?'giorno di fila':'giorni di fila';
+  $('fcProgTxt').innerHTML = s.total ? `<b>${s.done}</b> consolidate · <b>${s.seen}</b> viste su <b>${s.total}</b>` : 'Nessuna parola in questa lista.';
+  $('fcProgSeen').style.width=(s.total? s.seen/s.total*100:0)+'%';
+  $('fcProgDone').style.width=(s.total? s.done/s.total*100:0)+'%';
+  const wk=weakWords(k); $('fcWeakN').textContent=wk.length; $('fcWeakDict').disabled=!wk.length;
+  $('fcWeakBox').classList.toggle('calm', !wk.length);
+  const n=s.due+s.fresh;
+  $('fcStart').disabled=!n; $('fcStart').textContent = n ? `Inizia (${n} ${n===1?'carta':'carte'})` : 'Inizia';
+  const msg=$('fcDoneMsg');
+  if(listDeck(k) && !s.total){ msg.hidden=false; msg.textContent= userDeck(k) ? 'La lista è vuota. Tocca "Aggiungi parole" nel riquadro "Le mie liste" qui sotto.' : 'La lista è vuota.'; $('fcMoreRow').hidden=true; }
+  else if(!n){ msg.hidden=false; msg.textContent = s.unseen ? 'Per oggi hai finito! Torna domani per il ripasso.' : 'Hai visto tutte le parole di questa lista. Torna domani per il ripasso.'; $('fcMoreRow').hidden=!s.unseen; }
+  else { msg.hidden=true; $('fcMoreRow').hidden=true; }
+}
+$('fcMore').onclick=()=>{ const t=today(); fcs.extra[t]=fcs.extra[t]||{}; fcs.extra[t][fcs.deck]=(fcs.extra[t][fcs.deck]||0)+10; fcSave(); renderFcHome(); };
+
+/* ---------- session ---------- */
+let fq=[], fcur=null, fdeck='h1', fShown=false, fWriters=[], fQuizWriter=null;
+function buildQueue(k){
+  const now=Date.now(), q=[];
+  const words=deckWords(k);
+  for(const w of words) for(const dir of ['r','p']){
+    const st=fcs.cards[cid(k,w,dir)]; if(st && st.due<=now) q.push({k,w,dir});
+  }
+  shuffle(q);
+  // new words go in their learning order (shared characters together), spread among the reviews
+  const fresh=words.filter(w=>!fcs.cards[cid(k,w,'r')]).slice(0, deckStats(k).fresh).map(w=>({k,w,dir:'r',isNew:true}));
+  const out=[]; let i=0, j=0;
+  while(i<q.length || j<fresh.length){
+    if(j<fresh.length && (i>=q.length || out.length%3===2)) out.push(fresh[j++]); else out.push(q[i++]);
+  }
+  return out;
+}
+$('fcStart').onclick=()=>{ fdeck=fcs.deck; fq=buildQueue(fdeck); if(!fq.length) return; show('fcCard'); nextCard(); };
+$('fcQuit').onclick=()=>{ stopWriters(); show('fcHome'); renderFcHome(); };
+
+function stopWriters(){ try{ fQuizWriter && fQuizWriter.cancelQuiz(); }catch(e){} fQuizWriter=null; }
+function pickNext(){
+  const now=Date.now();
+  let i=fq.findIndex(c=>{ const st=fcs.cards[cid(c.k,c.w,c.dir)]; return !st || c.isNew || st.due<=now; });
+  if(i<0 && fq.length){ // only cards still in their short learning wait: take the earliest
+    let best=0; fq.forEach((c,ix)=>{ if(fcs.cards[cid(c.k,c.w,c.dir)].due < fcs.cards[cid(fq[best].k,fq[best].w,fq[best].dir)].due) best=ix; });
+    i=best;
+  }
+  return i<0 ? null : fq.splice(i,1)[0];
+}
+function gapSentence(zh, w){
+  const i=zh.indexOf(w); if(i<0) return fcEsc(zh);
+  return fcEsc(zh.slice(0,i))+'<span class="gapw">'+'＿'.repeat([...w].length)+'</span>'+fcEsc(zh.slice(i+w.length));
+}
+function markSentence(zh, w){
+  const i=zh.indexOf(w); if(i<0) return fcEsc(zh);
+  return fcEsc(zh.slice(0,i))+'<b>'+fcEsc(w)+'</b>'+fcEsc(zh.slice(i+w.length));
+}
+function spk(text){ return `<button class="spk" type="button" data-say="${fcEsc(text)}" aria-label="Ascolta la pronuncia" title="Ascolta la pronuncia"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>`; }
+$('fcFace').addEventListener('click',e=>{ const b=e.target.closest('[data-say]'); if(b){ e.stopPropagation(); speak(b.dataset.say); } });
+
+function updateLeft(){
+  const n=fq.length+1;
+  $('fcLeft').textContent = `Ancora ${n} ${n===1?'carta':'carte'}`;
+  $('fcDeckName').textContent = deckName(fdeck);
+}
+function nextCard(){
+  stopWriters();
+  fcur=pickNext();
+  if(!fcur){ show('fcHome'); renderFcHome(); $('fcDoneMsg').hidden=false; const nw=weakWords(fdeck).length; $('fcDoneMsg').textContent='Sessione completata. Ottimo lavoro!'+(nw?` Hai ${nw} ${nw===1?'parola':'parole'} da rinforzare: allenale nel dettato qui sopra.`:''); return; }
+  fShown=false; updateLeft();
+  const info=wordInfo(fcur.k,fcur.w);
+  $('fcBack').hidden=true; $('fcWrite').hidden=true; $('fcRateRow').hidden=true; $('fcFlag').hidden=true; $('fcShowRow').hidden=false; $('fcFront').hidden=false;
+  const f=$('fcFront');
+  if(fcur.dir==='r'){
+    $('fcKind').textContent = fcur.isNew ? 'Parola nuova · leggi e ricorda' : 'Riconosci la parola';
+    f.innerHTML=`<div class="bighz">${fcEsc(info.w)}</div>`;
+    $('fcWriteBtn').hidden=true;
+  } else {
+    $('fcKind').textContent='Scrivi la parola';
+    let h=`<div class="mean">${fcEsc(info.it)}</div><div class="pyl">${fcEsc(info.p)} ${spk(info.w)}</div>`;
+    if(info.ex) h+=`<div class="exs"><span class="zh">${gapSentence(info.ex[0],info.w)}</span><span class="itx">${fcEsc(info.ex[1])}</span></div>`;
+    f.innerHTML=h;
+    $('fcWriteBtn').hidden=false;
+  }
+  $('fcShow').focus();
+}
+function revealCard(){
+  if(!fcur || fShown) return; fShown=true; stopWriters();
+  const info=wordInfo(fcur.k,fcur.w), b=$('fcBack');
+  let h='';
+  if(fcur.dir==='r'){
+    h+=`<div class="bighz">${fcEsc(info.w)}</div><div class="pyl">${fcEsc(info.p)} ${spk(info.w)}</div><div class="mean">${fcEsc(info.it)}</div>`;
+  } else {
+    h+=`<div class="paperbox" id="fcBoxes"></div><div class="pyl">${fcEsc(info.p)} ${spk(info.w)}</div><div class="mean">${fcEsc(info.it)}</div>`;
+  }
+  if(info.ex) h+=`<div class="exs"><span class="zh">${markSentence(info.ex[0],info.w)} ${spk(info.ex[0])}</span><span class="itx">${fcEsc(info.ex[1])}</span></div>`;
+  b.innerHTML=h; b.hidden=false; $('fcFront').hidden=true; $('fcWrite').hidden=true;
+  if(fcur.dir==='p') animateWord(info.w);
+  $('fcShowRow').hidden=true; $('fcRateRow').hidden=false; updateFlag(); $('fcFlag').hidden=false;
+  const st=fcs.cards[cid(fcur.k,fcur.w,fcur.dir)];
+  document.querySelectorAll('#fcRateRow .rbtn').forEach(x=>{ x.querySelector('span').textContent=fmtNext(schedule(st,+x.dataset.r)); });
+}
+async function animateWord(w){
+  const chars=[...w]; const box=$('fcBoxes'); if(!box) return;
+  const ok=[]; for(const c of chars){ const d=await getStroke(c); ok.push(!!(d && d.medians && d.medians.length)); }
+  if(ok.every(Boolean)) fWriters=animBoxes(box, chars, chars.length>2?84:110);
+  else box.innerHTML=`<div class="bighz">${fcEsc(w)}</div>`;
+}
+$('fcShow').onclick=revealCard;
+$('fcFace').addEventListener('click',e=>{ if(!fShown && fcur && fcur.dir==='r' && !e.target.closest('button')) revealCard(); });
+
+/* writing on screen for the "write the word" cards */
+$('fcWriteBtn').onclick=async()=>{
+  const chars=[...fcur.w];
+  for(const c of chars){ const d=await getStroke(c); if(!(d && d.medians && d.medians.length)){ revealCard(); return; } }
+  $('fcWrite').hidden=false; $('fcWriteBtn').hidden=true;
+  const t=$('fcTiles'); t.innerHTML='';
+  chars.forEach((c,i)=>{ const d=document.createElement('div'); d.className='tile'+(i===0?' on':''); d.id='fct'+i; t.appendChild(d); });
+  let i=0;
+  const go=()=>{
+    const c=chars[i]; $('fcTarget').innerHTML='';
+    fQuizWriter=makeWriter($('fcTarget'), c, $('fcStage').clientWidth||260);
+    fQuizWriter.quiz({ showHintAfterMisses:3, leniency:1.1, onComplete:s=>{
+      const tl=$('fct'+i); tl.textContent=c; tl.classList.remove('on'); if(s.totalMistakes>=3){ tl.classList.add('bad'); weakAdd(fcur.w,2); fcSave(); }
+      i++; if(i<chars.length){ $('fct'+i).classList.add('on'); setTimeout(go,400); } else setTimeout(revealCard,500);
+    }});
+  };
+  go();
+};
+
+document.querySelectorAll('#fcRateRow .rbtn').forEach(btn=>btn.onclick=()=>{
+  if(!fcur) return;
+  const r=+btn.dataset.r, id=cid(fcur.k,fcur.w,fcur.dir), prev=fcs.cards[id];
+  const st=schedule(prev, r); fcs.cards[id]=st;
+  if(r===0){ weakAdd(fcur.w,2); fcs.miss[fcur.w]=(fcs.miss[fcur.w]||0)+1; } else if(r===1) weakAdd(fcur.w,1);
+  if(fcur.isNew){ const t=today(); fcs.intro[t]=fcs.intro[t]||{}; fcs.intro[t][fcur.k]=(fcs.intro[t][fcur.k]||0)+1; }
+  // once the word is recognised reliably, its "write it" card starts the next day
+  if(fcur.dir==='r' && !st.learn){
+    const pid=cid(fcur.k,fcur.w,'p');
+    if(!fcs.cards[pid]) fcs.cards[pid]={ivl:0,ease:2.5,step:0,learn:true,reps:0,lapses:0,due:dayStart(1)};
+  }
+  const t=today(); if(!fcs.days.includes(t)){ fcs.days.push(t); if(fcs.days.length>400) fcs.days=fcs.days.slice(-400); }
+  fcSave();
+  // still learning today: back into the queue
+  if(st.due < dayStart(1) && st.learn) fq.push({k:fcur.k,w:fcur.w,dir:fcur.dir});
+  nextCard();
+});
+document.addEventListener('keydown',e=>{
+  if($('fcCard').hidden || e.target.matches('input,textarea')) return;
+  if(!fShown && (e.key===' '||e.key==='Enter')){ e.preventDefault(); revealCard(); }
+  else if(fShown && ['1','2','3','4'].includes(e.key)){ document.querySelector(`#fcRateRow .rbtn[data-r="${+e.key-1}"]`).click(); }
+});
+
+/* ---------- my decks ---------- */
+let editing=null, editDeck=null;
+function guessPinyin(w){
+  const v=VOCAB.find(x=>x.w===w); if(v) return v.p;
+  return [...w].map(c=>CTX.cpy[c]||'').filter(Boolean).join(' ');
+}
+function makeEntry(w,p,it,ex,exIt){
+  const v=VOCAB.find(x=>x.w===w);
+  return {w, p:(p||'').trim() || guessPinyin(w), it:(it||'').trim() || (v?v.it:''), ex:(ex||'').trim(), exIt:(exIt||'').trim(), added:today()};
+}
+function newDeck(name){
+  const base=(name||'').trim().slice(0,40)||'Nuova lista'; let n=base, i=2;
+  while(fcs.decks.some(d=>d.name===n)) n=`${base} (${i++})`;
+  const d={id:'u'+Date.now().toString(36)+Math.random().toString(36).slice(2,5), name:n, words:[]};
+  fcs.decks.push(d); return d;
+}
+function renderMine(){
+  const d=userDeck(editDeck); if(!d){ show('fcHome'); renderFcHome(); return; }
+  $('mName').value=d.name;
+  const l=$('mList'); l.innerHTML='';
+  $('mCount').textContent=`Parole della lista (${d.words.length})`;
+  if(!d.words.length){ l.innerHTML='<p class="empty">La lista è vuota. Aggiungi le parole qui sopra.</p>'; return; }
+  [...d.words].reverse().forEach(c=>{
+    const row=document.createElement('div'); row.className='mrow';
+    row.innerHTML=`<span class="h">${fcEsc(c.w)}</span><span class="m"><b>${fcEsc(c.p)}</b> · ${c.it?fcEsc(c.it):'<span class="nomean">manca il significato</span>'}${c.ex?'<br>'+fcEsc(c.ex):''}</span>`;
+    const a=document.createElement('span'); a.className='acts';
+    const e=document.createElement('button'); e.className='mini'; e.type='button'; e.textContent='Modifica';
+    e.onclick=()=>{ addTab('mOne'); editing=c.w; $('mOneTitle').textContent='Modifica parola'; $('mW').value=c.w; $('mP').value=c.p; $('mP').dataset.touched='1'; $('mI').value=c.it; $('mE').value=c.ex||''; $('mEI').value=c.exIt||'';
+      $('mSave').textContent='Salva'; $('mCancel').hidden=false; $('mOne').scrollIntoView({block:'start'}); };
+    const x=document.createElement('button'); x.className='mini del'; x.type='button'; x.textContent='Elimina';
+    x.onclick=()=>{
+      if(x.dataset.sure!=='1'){ x.dataset.sure='1'; x.textContent='Conferma'; setTimeout(()=>{ x.dataset.sure=''; x.textContent='Elimina'; },3000); return; }
+      d.words=d.words.filter(y=>y.w!==c.w); delete fcs.cards[cid(d.id,c.w,'r')]; delete fcs.cards[cid(d.id,c.w,'p')]; fcSave(); renderMine();
+    };
+    a.append(e,x); row.appendChild(a); l.appendChild(row);
+  });
+}
+function resetForm(){ editing=null; if($('mOneTitle')) $('mOneTitle').textContent='Aggiungi una parola'; ['mW','mP','mI','mE','mEI'].forEach(i=>$(i).value=''); $('mP').dataset.touched=''; $('mSave').textContent='Aggiungi'; $('mCancel').hidden=true; }
+$('mW').addEventListener('input',()=>{
+  const w=$('mW').value.trim(); if(!w) return;
+  const v=VOCAB.find(x=>x.w===w);
+  if(!$('mP').dataset.touched) $('mP').value=guessPinyin(w);
+  if(v && !$('mI').value) $('mI').value=v.it;
+});
+$('mP').addEventListener('input',()=>{ $('mP').dataset.touched=$('mP').value?'1':''; });
+$('mCancel').onclick=()=>{ resetForm(); $('mMsg').hidden=true; };
+$('mSave').onclick=()=>{
+  const d=userDeck(editDeck); if(!d) return;
+  const w=$('mW').value.trim(), m=$('mMsg'); m.hidden=false;
+  if(!hanOf(w).length){ m.textContent='Scrivi la parola in caratteri cinesi.'; return; }
+  const rec=makeEntry(w,$('mP').value,$('mI').value,$('mE').value,$('mEI').value);
+  if(editing){
+    const i=d.words.findIndex(x=>x.w===editing);
+    if(editing!==w){ if(d.words.some(x=>x.w===w)){ m.textContent=`${w} è già nella lista.`; return; }
+      ['r','p'].forEach(dir=>{ const o=cid(d.id,editing,dir); if(fcs.cards[o]){ fcs.cards[cid(d.id,w,dir)]=fcs.cards[o]; delete fcs.cards[o]; } }); }
+    rec.added=d.words[i].added; d.words[i]=rec; m.textContent=`${w} aggiornata.`;
+  } else {
+    if(d.words.some(x=>x.w===w)){ m.textContent=`${w} è già nella lista.`; return; }
+    d.words.push(rec); m.textContent=`${w} aggiunta.`;
+  }
+  fcSave(); resetForm(); renderMine(); $('mW').focus();
+};
+$('mName').addEventListener('change',()=>{ const d=userDeck(editDeck); if(!d) return; const n=$('mName').value.trim(); if(n){ d.name=n.slice(0,40); fcSave(); } else $('mName').value=d.name; });
+
+/* several words at once: one per line or separated by spaces; lines copied from Excel keep their columns */
+function parseRows(text){
+  const lines=text.replace(/\r/g,'').split('\n').filter(l=>l.trim());
+  const rows=[];
+  for(const line of lines){
+    if(/[\t;]/.test(line)){ rows.push(splitLine(line, line.includes('\t')?'\t':';')); continue; }
+    line.split(/[\s,，、]+/).filter(Boolean).forEach(w=>rows.push([w]));
+  }
+  return rows;
+}
+function splitLine(line, sep){   // one CSV line, with "quoted" fields
+  const out=[]; let cur='', q=false;
+  for(let i=0;i<line.length;i++){
+    const ch=line[i];
+    if(q){ if(ch==='"'){ if(line[i+1]==='"'){ cur+='"'; i++; } else q=false; } else cur+=ch; }
+    else if(ch==='"' && !cur) q=true;
+    else if(ch===sep){ out.push(cur); cur=''; }
+    else cur+=ch;
+  }
+  out.push(cur); return out.map(s=>s.trim());
+}
+function addRows(d, rows){
+  let added=0, dup=0, bad=0;
+  for(const r of rows){
+    const w=(r[0]||'').replace(/\s+/g,'');
+    if(!w || hanOf(w).length!==[...w].length){ bad++; continue; }
+    if(d.words.some(x=>x.w===w)){ dup++; continue; }
+    d.words.push(makeEntry(w,r[1],r[2],r[3],r[4])); added++;
+  }
+  return {added,dup,bad};
+}
+$('mBulkAdd').onclick=()=>{
+  const d=userDeck(editDeck), m=$('mBulkMsg'); if(!d) return;
+  let rows=parseRows($('mBulk').value);
+  if(rows.length && !hanOf(rows[0][0]||'').length) rows=rows.slice(1);   // a header row
+  const r=addRows(d, rows); fcSave();
+  m.hidden=false;
+  m.textContent=`Aggiunte ${r.added} ${r.added===1?'parola':'parole'}.`+(r.dup?` ${r.dup} già nella lista.`:'')+(r.bad?` ${r.bad} ${r.bad===1?'riga ignorata':'righe ignorate'} (nella prima colonna servono solo caratteri cinesi).`:'');
+  if(r.added) $('mBulk').value='';
+  renderMine();
+};
+
+/* export a deck as a file anyone can import; progress is not included */
+function csvCell(s){ s=String(s||''); return /[;"\n]/.test(s) ? '"'+s.replace(/"/g,'""')+'"' : s; }
+$('mExport').onclick=async()=>{
+  const d=userDeck(editDeck), m=$('mDeckMsg'); if(!d) return; m.hidden=false;
+  if(!d.words.length){ m.textContent='La lista è vuota.'; return; }
+  const lines=['Parola;Pinyin;Italiano;Esempio;Traduzione', ...d.words.map(x=>[x.w,x.p,x.it,x.ex,x.exIt].map(csvCell).join(';'))];
+  const blob=new Blob(['﻿'+lines.join('\r\n')],{type:'text/csv'});
+  const slug=d.name.replace(/[^\p{L}\p{N}]+/gu,'_').replace(/^_|_$/g,'')||'lista';
+  const r=await saveFile(`lista_${slug}.csv`, blob);
+  m.textContent = r==='saved' ? 'File salvato. Invialo agli studenti: lo aprono con "Importa una lista".' : r==='declined' ? 'Esportazione annullata.' : 'Il salvataggio non è disponibile in questa visualizzazione.';
+};
+$('mDelete').onclick=()=>{
+  const b=$('mDelete'), d=userDeck(editDeck); if(!d) return;
+  if(b.dataset.sure!=='1'){ b.dataset.sure='1'; b.textContent=`Conferma: elimina "${d.name}"`; setTimeout(()=>{ b.dataset.sure=''; b.textContent='Elimina la lista'; },4000); return; }
+  for(const k of Object.keys(fcs.cards)) if(k.startsWith(d.id+'|')) delete fcs.cards[k];
+  fcs.decks=fcs.decks.filter(x=>x.id!==d.id);
+  if(!fcs.decks.length) fcs.decks.push({id:'my',name:'Le mie parole',words:[]});
+  fcs.deck='h1'; fcSave(); b.dataset.sure=''; b.textContent='Elimina la lista';
+  show('fcHome'); renderFcHome(); $('fcDeckMsg').hidden=false; $('fcDeckMsg').textContent=`Lista "${d.name}" eliminata.`;
+};
+function openEditor(id, panel='mOne'){ editDeck=id; resetForm(); ['mMsg','mBulkMsg','mDeckMsg','pkMsg'].forEach(i=>$(i).hidden=true); addTab(panel); show('fcMine'); renderMine(); }
+/* every personal list is shown with its own buttons, whatever list is selected above */
+function renderMyLists(){
+  const box=$('fcMyLists'); box.innerHTML='';
+  fcs.decks.forEach(d=>{
+    const row=document.createElement('div'); row.className='ml'+(fcs.deck===d.id?' cur':'');
+    const n=d.words.length;
+    row.innerHTML=`<span class="nm">${fcEsc(d.name)}<small>${n} ${n===1?'parola':'parole'}</small></span>${fcs.deck===d.id?'<span class="tag">in studio</span>':''}`;
+    const acts=document.createElement('div'); acts.className='acts';
+    const mk=(txt,cls,fn)=>{ const b=document.createElement('button'); b.type='button'; b.className='btn '+cls; b.textContent=txt; b.onclick=fn; acts.appendChild(b); };
+    mk('Aggiungi parole','', ()=>{ openEditor(d.id); document.querySelector('.addbox').scrollIntoView({block:'start'}); $('mW').focus(); });
+    mk('Modifica','ghost', ()=>{ openEditor(d.id); $('mCount').scrollIntoView({block:'start'}); });
+    if(fcs.deck!==d.id) mk('Studia','ghost', ()=>{ fcs.deck=d.id; fcSave(); renderFcHome(); window.scrollTo({top:0,behavior:'smooth'}); });
+    row.appendChild(acts); box.appendChild(row);
+  });
+}
+$('mBack').onclick=()=>{ show('fcHome'); renderFcHome(); };
+
+/* new deck / import a deck file */
+$('fcNewDeck').onclick=()=>{ $('fcNewDeckRow').hidden=false; $('fcNewName').value=''; $('fcNewName').focus(); };
+$('fcNewNo').onclick=()=>{ $('fcNewDeckRow').hidden=true; };
+$('fcNewOk').onclick=()=>{
+  const d=newDeck($('fcNewName').value); fcs.deck=d.id; fcSave(); $('fcNewDeckRow').hidden=true;
+  openEditor(d.id); $('mW').focus();
+};
+$('fcNewName').addEventListener('keydown',e=>{ if(e.key==='Enter') $('fcNewOk').click(); });
+$('fcDeckFile').onchange=async e=>{
+  const f=e.target.files[0], m=$('fcDeckMsg'); e.target.value=''; if(!f) return; m.hidden=false;
+  try{
+    let text=(await f.text()).replace(/^﻿/,'');
+    if(!hanOf(text).length){ m.textContent='Nel file non ci sono caratteri cinesi. Se viene da Excel, salvalo come "CSV UTF-8".'; return; }
+    const lines=text.replace(/\r/g,'').split('\n').filter(l=>l.trim());
+    const first=lines[0]||''; const sep= first.includes('\t') ? '\t' : (first.split(';').length>=first.split(',').length ? ';' : ',');
+    let rows=lines.map(l=>splitLine(l,sep));
+    if(rows.length && !hanOf(rows[0][0]||'').length) rows=rows.slice(1);
+    const name=f.name.replace(/\.[^.]+$/,'').replace(/^(lista|mazzo)_/,'').replace(/_/g,' ');
+    const d=newDeck(name); const r=addRows(d,rows);
+    if(!r.added){ fcs.decks=fcs.decks.filter(x=>x.id!==d.id); m.textContent='Non ho trovato parole valide nel file (prima colonna: parola in caratteri cinesi).'; return; }
+    fcs.deck=d.id; fcSave(); renderFcHome();
+    m.hidden=false; m.textContent=`Importata la lista "${d.name}": ${r.added} ${r.added===1?'parola':'parole'}.`+(r.bad?` ${r.bad} ${r.bad===1?'riga ignorata':'righe ignorate'}.`:'');
+  }catch(err){ m.textContent='Non è stato possibile leggere il file.'; }
+};
+
+/* from the dictation results: add the mistakes to "Le mie parole" */
+$('toFc').onclick=()=>{
+  let d=userDeck('my'); if(!d){ d={id:'my',name:'Le mie parole',words:[]}; fcs.decks.unshift(d); }
+  let n=0;
+  for(const v of wrongList){
+    const w=v.w; if(d.words.some(x=>x.w===w)) continue;
+    const ex=FC.ex[w]||null, hv=VOCAB.find(x=>x.w===w);
+    d.words.push({w, p:(hv&&hv.p)||v.p||guessPinyin(w), it:(hv&&hv.it)||(v.k==='char'?'':v.it)||'', ex:ex?ex[0]:'', exIt:ex?ex[1]:'', added:today()});
+    n++;
+  }
+  fcSave();
+  $('toFc').textContent = n ? `Aggiunte ${n} ${n===1?'parola':'parole'} a "${d.name}"` : `Già presenti in "${d.name}"`;
+  $('toFc').disabled=true;
+};
+
+/* ---------- backup ---------- */
+let pendingImport=null;
+$('fcExport').onclick=async()=>{
+  const m=$('fcBackupMsg'); m.hidden=false;
+  const blob=new Blob([JSON.stringify({app:'moxie-flashcard',exported:new Date().toISOString(),data:fcs},null,1)],{type:'application/json'});
+  const r=await saveFile(`moxie-flashcard-${today()}.json`, blob);
+  m.textContent = r==='saved' ? 'Backup salvato. Conservalo in un posto sicuro (email, cloud).' : r==='declined' ? 'Esportazione annullata.' : 'Il salvataggio non è disponibile in questa visualizzazione.';
+};
+$('fcImportFile').onchange=async e=>{
+  const f=e.target.files[0], m=$('fcBackupMsg'); m.hidden=false; e.target.value='';
+  if(!f) return;
+  try{
+    const j=JSON.parse(await f.text());
+    if(!j || j.app!=='moxie-flashcard' || !j.data || j.data.v!==1) throw 0;
+    pendingImport=j.data;
+    m.textContent=`Backup del ${(j.exported||'').slice(0,10)}: ${Object.keys(j.data.cards||{}).length} carte, ${(j.data.decks||[]).reduce((n,d)=>n+d.words.length,0)+(j.data.custom||[]).length} parole personali. I progressi attuali verranno sostituiti.`;
+    $('fcImportRow').hidden=false;
+  }catch(err){ m.textContent='Questo file non è un backup delle flashcard.'; }
+};
+$('fcImportOk').onclick=()=>{ if(!pendingImport) return; fcs=normalize(pendingImport); fcSave(); pendingImport=null; $('fcImportRow').hidden=true; $('fcBackupMsg').textContent='Backup importato.'; renderFcHome(); };
+$('fcImportNo').onclick=()=>{ pendingImport=null; $('fcImportRow').hidden=true; $('fcBackupMsg').textContent='Importazione annullata.'; };
+
+/* ---------- tabs ---------- */
+$('tabDict').onclick=()=>{ if(!$('quiz').hidden) return; stopWriters(); show(($('results').hidden || !fcs) ? 'setup' : 'results'); };
+$('tabFc').onclick=()=>{ if(!$('fcCard').hidden) return; show('fcHome'); renderFcHome(); };
+try{ if(localStorage.getItem('mxTab')==='fc'){ show('fcHome'); renderFcHome(); } }catch(e){}
+
+
+/* ---------- weak words: found by the flashcards, trained in the dictation ---------- */
+// score: +2 "Non la so", +1 "Difficile", +2 many mistakes when writing, +3 wrong in the dictation;
+// −2 for each correct answer in the dictation. From 3 the word is "da rinforzare"; the score is capped at 4,
+// so two correct dictation answers take it out of the list.
+const WEAK=3, WEAK_MAX=4;
+// a word enters the list at score 3 and stays there until the dictation brings the score back to 0
+function weakAdd(w,n){ if(!n) return; fcs.weak=fcs.weak||{}; fcs.weakOn=fcs.weakOn||{}; fcs.weak[w]=Math.min(WEAK_MAX,(fcs.weak[w]||0)+n); if(fcs.weak[w]>=WEAK) fcs.weakOn[w]=1; }
+function weakSet(w,on){ fcs.weak=fcs.weak||{}; fcs.weakOn=fcs.weakOn||{}; if(on){ fcs.weak[w]=WEAK_MAX; fcs.weakOn[w]=1; } else { delete fcs.weak[w]; delete fcs.weakOn[w]; } }
+function isWeak(w){ return !!((fcs.weakOn||{})[w]); }
+function weakWords(k){ return deckWords(k).filter(isWeak); }
+function inAnyDeck(w){ return !!anyEntry(w); }
+function fcFromDictation(w, ok){
+  if(!fcs || !inAnyDeck(w)) return;
+  fcs.weak=fcs.weak||{}; fcs.miss=fcs.miss||{};
+  if(ok){ if(fcs.weak[w]){ fcs.weak[w]=Math.max(0,fcs.weak[w]-2); if(!fcs.weak[w]) weakSet(w,false); } }
+  else { weakAdd(w,WEAK); fcs.miss[w]=(fcs.miss[w]||0)+1; }   // a mistake in the dictation is enough on its own
+  fcSave();
+}
+function updateFlag(){
+  const on=isWeak(fcur.w); const b=$('fcFlag');
+  b.setAttribute('aria-pressed',on); b.textContent= on ? 'Da rinforzare ✓' : 'Da rinforzare'; b.title= on ? 'Togli dall\'elenco «Da rinforzare»' : 'Aggiungi all\'elenco «Da rinforzare»';
+}
+$('fcFlag').onclick=()=>{
+  if(!fcur) return; fcs.weak=fcs.weak||{};
+  weakSet(fcur.w, !isWeak(fcur.w));
+  fcSave(); updateFlag();
+};
+
+function unitsFor(words){ return words.map(anyEntry).filter(Boolean); }
+async function dictWeak(words){
+  if(!words.length) return;
+  await begin(shuffle(unitsFor(words)).slice(0,30), 'Parole da rinforzare');
+  if($('quiz').hidden){ $('flMsg').hidden=false; $('flMsg').textContent='Per queste parole mancano i dati per scriverle sullo schermo. Prova il 字帖.'; }
+}
+$('fcWeakDict').onclick=()=>dictWeak(weakWords(fcs.deck));
+
+/* the list: what I have practised and what I still need to practise */
+let flTab='weak';
+const FLTABS=[{k:'weak',t:'Da rinforzare'},{k:'learn',t:'In corso'},{k:'done',t:'Consolidate'},{k:'new',t:'Da imparare'}];
+function classify(k){
+  const out={weak:[],learn:[],done:[],new:[]};
+  for(const w of deckWords(k)){
+    const r=fcs.cards[cid(k,w,'r')], p=fcs.cards[cid(k,w,'p')];
+    if(isWeak(w)) out.weak.push(w);
+    else if(!r) out.new.push(w);
+    else if(!r.learn && r.ivl>=21) out.done.push(w);
+    else out.learn.push(w);
+  }
+  out.weak.sort((a,b)=>(fcs.weak[b]||0)-(fcs.weak[a]||0) || (fcs.miss[b]||0)-(fcs.miss[a]||0));
+  const nd=w=>Math.min(...['r','p'].map(d=>(fcs.cards[cid(k,w,d)]||{}).due||Infinity));
+  out.learn.sort((a,b)=>nd(a)-nd(b));
+  return out;
+}
+function whenText(k,w){
+  const ds=['r','p'].map(d=>fcs.cards[cid(k,w,d)]).filter(Boolean).map(s=>s.due);
+  if(!ds.length) return '';
+  const d=Math.min(...ds);
+  if(d<=dayStart(1)) return 'ripasso oggi';
+  const n=Math.round((d-dayStart(0))/DAY); return n===1 ? 'ripasso domani' : `ripasso fra ${n} g`;
+}
+function renderList(){
+  const k=fcs.deck, c=classify(k);
+  $('flDeck').textContent=deckName(k);
+  const tb=$('flTabs'); tb.innerHTML='';
+  FLTABS.forEach(x=>{
+    const b=document.createElement('button'); b.type='button'; b.className='fltab'+(x.k==='weak'?' weak':''); b.setAttribute('role','tab');
+    b.setAttribute('aria-selected', flTab===x.k); b.innerHTML=`<b>${c[x.k].length}</b>${x.t}`;
+    b.onclick=()=>{ flTab=x.k; renderList(); }; tb.appendChild(b);
+  });
+  const hints={weak:'Le parole che sbagli più spesso. Allenale nel dettato o con il 字帖: dopo due risposte giuste nel dettato escono da questo elenco.',
+    learn:'Parole già viste che stai ancora memorizzando.', done:'Parole che ricordi bene: il prossimo ripasso è fra tre settimane o più.',
+    new:'Parole che non hai ancora studiato. Arriveranno tra le parole nuove, nell\'ordine indicato.'};
+  $('flHint').textContent=hints[flTab];
+  $('flActs').hidden = !(flTab==='weak' && c.weak.length); $('flMsg').hidden=true;
+  const rows=$('flRows'); rows.innerHTML='';
+  const list=c[flTab];
+  if(!list.length){ rows.innerHTML='<p class="empty">'+({weak:'Nessuna parola da rinforzare. Ottimo!',learn:'Nessuna parola in corso.',done:'Ancora nessuna parola consolidata.',new:'Hai già visto tutte le parole.'})[flTab]+'</p>'; return; }
+  const frag=document.createDocumentFragment();
+  list.forEach(w=>{
+    const i=wordInfo(k,w), row=document.createElement('div'); row.className='frow';
+    const miss=(fcs.miss||{})[w]||0;
+    let s='';
+    if(flTab==='weak') s=`<span class="pill weak">da rinforzare</span><br>${miss?`sbagliata ${miss} ${miss===1?'volta':'volte'}`:'aggiunta da te'}`;
+    else if(flTab==='learn') s=`<span class="pill learn">in corso</span><br>${whenText(k,w)}`;
+    else if(flTab==='done') s=`<span class="pill done">consolidata</span><br>${whenText(k,w)}`;
+    row.innerHTML=`<span class="h">${fcEsc(w)}</span><span class="m"><b>${fcEsc(i.p)}</b> · ${fcEsc(i.it)}</span><span class="s">${s}</span>`;
+    if(flTab!=='new'){
+      const btn=document.createElement('button'); btn.type='button'; btn.className='mini'+(flTab==='weak'?'':' flag');
+      btn.style.gridColumn='1 / -1'; btn.style.justifySelf='start'; btn.style.marginTop='4px';
+      btn.textContent= flTab==='weak' ? 'Togli dall\'elenco' : 'Da rinforzare';
+      btn.onclick=()=>{ weakSet(w, flTab!=='weak'); fcSave(); renderList(); };
+      row.appendChild(btn);
+    }
+    frag.appendChild(row);
+  });
+  rows.appendChild(frag);
+}
+$('fcList').onclick=()=>{ flTab = weakWords(fcs.deck).length ? 'weak' : 'learn'; show('fcListSec'); renderList(); };
+$('flBack').onclick=()=>{ show('fcHome'); renderFcHome(); };
+$('flDict').onclick=()=>dictWeak(classify(fcs.deck).weak);
+$('flPdf').onclick=async()=>{
+  const m=$('flMsg'), b=$('flPdf'); m.hidden=false; b.disabled=true; b.textContent='Preparazione…';
+  try{
+    const k=fcs.deck, words=classify(k).weak, items=[];
+    for(const w of words){ const ok=[]; for(const c of [...w]) if(await getStroke(c)) ok.push(c); const i=wordInfo(k,w); if(ok.length) items.push({w, p:i.p, it:i.it, chars:ok}); }
+    try{ await Promise.all([document.fonts.load(`700 40px "Noto Serif SC"`,words.join('')+'字帖'), document.fonts.load(`500 20px "Figtree"`)]); }catch(e){}
+    const pages=[]; drawZitie(pages, items, 'Parole da rinforzare · '+deckName(k)+' · '+new Date().toLocaleDateString('it-IT'));
+    const r=await saveFile(`zitie_da_rinforzare_${today()}.pdf`, toPdf(pages));
+    m.textContent = r==='saved' ? 'PDF pronto.' : r==='declined' ? 'Download annullato.' : 'Il download non è disponibile in questa visualizzazione.';
+  }catch(e){ m.textContent='Non è stato possibile creare il PDF.'; }
+  b.disabled=false; b.textContent='Crea il 字帖 in PDF';
+};
+
+/* ---------- add words: tabs, and picking from the HSK lists ---------- */
+function addTab(id){
+  document.querySelectorAll('.atab').forEach(b=>b.setAttribute('aria-selected', b.dataset.p===id));
+  ['mOne','mMany','mHsk'].forEach(p=>$(p).hidden = p!==id);
+  if(id==='mHsk') renderPicker(true);
+}
+document.querySelectorAll('.atab').forEach(b=>b.onclick=()=>addTab(b.dataset.p));
+
+const pk={levels:new Set([1]), q:'', shown:60, sel:new Set()};
+const plain=s=>String(s||'').toLowerCase().replace(/[ǖǘǚǜü]/g,'v').normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+const pyKey=s=>plain(s).replace(/[^a-z]/g,'').replace(/u:/g,'v');
+// HSK words in learning order, with search keys prepared once
+const PK_ALL=(()=>{ const out=[]; [1,2,3,4].forEach(L=>(FC.order[L]||[]).forEach(w=>{ const v=VOCAB.find(x=>x.w===w); if(v) out.push({w, p:v.p, it:v.it, l:L, py:pyKey(v.p), itk:plain(v.it)}); })); return out; })();
+function pkMatches(){
+  const q=pk.q.trim(), han=hanOf(q).join(''), qp=pyKey(q), qi=plain(q);
+  const out=[];
+  PK_ALL.forEach((x,i)=>{
+    if(!pk.levels.has(x.l)) return;
+    let r=-1;   // lower rank = better match
+    if(!q) r=0;
+    else if(han){ if(x.w===han) r=0; else if(x.w.startsWith(han)) r=1; else if(x.w.includes(han)) r=2; }
+    else {
+      if(qp && x.py===qp) r=0; else if(qp && x.py.startsWith(qp)) r=1; else if(qp.length>=3 && x.py.includes(qp)) r=3;
+      if(qi.length>=2){ const words=x.itk.split(/[^a-z]+/); if(words.includes(qi)) r= r<0?1:Math.min(r,1); else if(words.some(w=>w.startsWith(qi))) r= r<0?2:Math.min(r,2); else if(qi.length>=4 && x.itk.includes(qi)) r= r<0?3:r; }
+    }
+    if(r>=0) out.push([r,i,x]);
+  });
+  return out.sort((a,b)=>a[0]-b[0]||a[1]-b[1]).map(e=>e[2]);
+}
+function renderPicker(reset){
+  if(reset){ pk.shown=60; }
+  const d=userDeck(editDeck); if(!d) return;
+  const have=new Set(d.words.map(x=>x.w));
+  const lv=$('pkLevels'); lv.innerHTML='';
+  [1,2,3,4].forEach(L=>lv.appendChild(chip('HSK '+L, pk.levels.has(L), ()=>{ pk.levels.has(L)?pk.levels.delete(L):pk.levels.add(L); renderPicker(true); })));
+  const all=pkMatches(), list=all.slice(0,pk.shown);
+  $('pkInfo').textContent = all.length ? `${all.length} ${all.length===1?'parola trovata':'parole trovate'}. Tocca una parola per selezionarla.` : 'Nessuna parola trovata. Prova a cambiare livello o ricerca.';
+  const box=$('pkList'); box.innerHTML='';
+  const frag=document.createDocumentFragment();
+  list.forEach(x=>{
+    const row=document.createElement('label'); row.className='pkrow'+(have.has(x.w)?' have':'');
+    const cb=document.createElement('input'); cb.type='checkbox'; cb.checked=pk.sel.has(x.w)||have.has(x.w); cb.disabled=have.has(x.w);
+    cb.onchange=()=>{ cb.checked?pk.sel.add(x.w):pk.sel.delete(x.w); updatePkBar(); };
+    row.appendChild(cb);
+    row.insertAdjacentHTML('beforeend',`<span class="h">${fcEsc(x.w)}</span><span class="m"><b>${fcEsc(x.p)}</b> · ${fcEsc(x.it)}</span><span class="lv">${have.has(x.w)?'già nella lista':'HSK '+x.l}</span>`);
+    frag.appendChild(row);
+  });
+  box.appendChild(frag);
+  $('pkMoreRow').hidden = all.length<=pk.shown;
+  $('pkMore').textContent=`Mostra altre (${all.length-pk.shown})`;
+  updatePkBar();
+}
+function updatePkBar(){
+  const n=pk.sel.size;
+  $('pkAdd').disabled=!n;
+  $('pkAdd').textContent = n ? `Aggiungi alla lista (${n})` : 'Aggiungi alla lista';
+}
+$('pkQ').addEventListener('input',()=>{ pk.q=$('pkQ').value; renderPicker(true); });
+$('pkMore').onclick=()=>{ pk.shown+=60; renderPicker(false); };
+$('pkAll').onclick=()=>{ const d=userDeck(editDeck); const have=new Set(d.words.map(x=>x.w)); pkMatches().slice(0,pk.shown).forEach(x=>{ if(!have.has(x.w)) pk.sel.add(x.w); }); renderPicker(false); };
+$('pkNone').onclick=()=>{ pk.sel.clear(); renderPicker(false); };
+$('pkAdd').onclick=()=>{
+  const d=userDeck(editDeck); if(!d) return;
+  let n=0;
+  // keep the order in which the student ticked the words
+  for(const w of pk.sel){
+    if(d.words.some(x=>x.w===w)) continue;
+    const v=VOCAB.find(x=>x.w===w)||{}, ex=FC.ex[w];
+    d.words.push({w, p:v.p||guessPinyin(w), it:v.it||'', ex:ex?ex[0]:'', exIt:ex?ex[1]:'', added:today()}); n++;
+  }
+  pk.sel.clear(); fcSave(); renderMine(); renderPicker(false);
+  const m=$('pkMsg'); m.hidden=false; m.textContent=`Aggiunte ${n} ${n===1?'parola':'parole'} a "${d.name}".`;
+};
 /* ---------- boot ---------- */
 renderSetup();
 fetch('strokes.json').then(r=>r.json()).then(d=>{ STROKES=d; renderSetup(); })
