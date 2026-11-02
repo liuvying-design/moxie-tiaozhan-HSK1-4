@@ -1,0 +1,17 @@
+{
+  "name": "默写挑战 HSK 1–4",
+  "short_name": "默写挑战",
+  "description": "Dettato di caratteri cinesi HSK 1–4 · a cura di Ying Liu, Università Ca' Foscari Venezia",
+  "lang": "it",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F2F4EF",
+  "theme_color": "#2D6A55",
+  "icons": [
+    {"src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png"},
+    {"src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ]
+}
