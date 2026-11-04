@@ -1,5 +1,5 @@
 /* 默写挑战 — offline cache. Change VERSION whenever the files change. */
-const VERSION = '2026-11-04-1';
+const VERSION = '2026-11-04-3';
 const CORE = 'core-' + VERSION;
 const EXTRA = 'extra-v1';          // characters outside HSK 1–4 and fonts, cached when first used
 const CORE_FILES = [
